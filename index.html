@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAIL Club | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand-wrap">
+      <img class="brand-logo" src="SAIL.png" alt="SAIL club logo">
+      <div>
+        <h1 class="brand-title">SAIL Club</h1>
+        <p class="brand-subtitle">Sharing AI Lunch Club,<br>Institute of Atomic and Molecular Sciences,<br>Academia Sinica, Taiwan</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul class="menu">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="index_zh.html">繁體中文</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-intro">
+      <h2>Upcoming presentations</h2>
+      <p>If you have a project, tool or technique that you would be willing to talk about and share please <a href="#contact">contact</a> the organizers.</p>
+      <p>To reserve your lunch please sign up on the google sheet emailed with the talk reminder or <a href="mailto:s.p.bennetts@g.iams.sinica.edu.tw">email</a> by friday before the talk.</p>
+      <p><strong>Next meeting: 12:15pm Wednesday April 15th 2026</strong></p>
+      <p><strong>CT Chang Memorial Lecture Hall</strong></p>
+      <section id="talk-list-apr15" class="talk-list" aria-label="April 15 talks"></section>
+      <p><strong>12:15pm Wednesday May 13th 2026:</strong></p>
+      <p>[TBA]</p>
+      <h3>Archive:</h3>
+      <p>[Empty]</p>
+      <h3 id="contact">Contact:</h3>
+      <p>If you have a project, a new technique or a new tool that you would be willing to share please contact</p>
+      <p>Shayne Bennetts 肖恩 <a href="mailto:s.p.bennetts@g.iams.sinica.edu.tw">s.p.bennetts@g.iams.sinica.edu.tw</a></p>
+      <p>and Qian-Rui Huang 黃千睿 <a href="mailto:qrhuang@gate.sinica.edu.tw">qrhuang@gate.sinica.edu.tw</a></p>
+      <p>SAIL Club lunches occur every 4 weeks.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-stack">
+      <div class="footer-logos">
+        <div class="footer-logos-inner">
+          <a href="https://www.sinica.edu.tw/en" target="_blank" rel="noopener noreferrer">
+            <img alt="Academia Sinica" class="academia-logo" src="AcademiaSinica.png">
+          </a>
+          <a href="https://www.iams.sinica.edu.tw/en/" target="_blank" rel="noopener noreferrer">
+            <img alt="IAMS" class="iams-logo" src="IAMSLogo.jpg">
+          </a>
+        </div>
+      </div>
+      <div>
+        <p>Institute of Atomic and Molecular Sciences, Academia Sinica</p>
+        <p>Tel: +886-2-2366-8236 | Address: No. 1, Roosevelt Rd. Sec. 4, Taipei 10617, Taiwan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="talks.js?v=20260406"></script>
+  <script src="main.js?v=20260406"></script>
+  <script>
+    renderTalks("talk-list-apr15", { start: 0, count: 3 });
+  </script>
+</body>
+</html>
+
+
