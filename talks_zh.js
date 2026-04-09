@@ -3,7 +3,7 @@
     name: "Vibe Coding 奈米光纖製程硬體控制",
     image: "01.gif",
     presenter: "Wen-Ting Wang",
-    presentedDate: "2026 年 4 月 15 日（週三）中午 12:15",
+    presentedDate: "待公告",
     contributors: "Chun-Chia Chen 陳俊嘉, Shayne Bennetts",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["硬體控制", "奈米光纖", "AI 輔助開發"],
@@ -14,7 +14,7 @@
     name: "Miss Align：網頁式光學設計",
     image: "03.gif",
     presenter: "Hao-Rong Yang 楊皓蓉",
-    presentedDate: "2026 年 4 月 15 日（週三）中午 12:15",
+    presentedDate: "待公告",
     contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["光學設計", "網頁工具", "對準規劃"],
@@ -26,7 +26,7 @@
     image: "SAIL.png",
     imageStatus: "TBD",
     presenter: "Chun-Chia Chen 陳俊嘉",
-    presentedDate: "2026 年 4 月 15 日（週三）中午 12:15",
+    presentedDate: "待公告",
     contributors: "None listed",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["數位 PID", "雷射穩定", "Codex"],
@@ -111,6 +111,7 @@
     description: "規劃下一階段 SAIL mini-project 的題目、里程碑與展示形式。"
   }
 ];
+
 
 
 

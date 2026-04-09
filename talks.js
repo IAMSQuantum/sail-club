@@ -3,7 +3,7 @@
     name: "Vibe coded hardware control for nanofiber fabrication",
     image: "01.gif",
     presenter: "Wen-Ting Wang",
-    presentedDate: "12:15pm Wednesday April 15, 2026",
+    presentedDate: "TBA",
     contributors: "Chun-Chia Chen 陳俊嘉, Shayne Bennetts",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["hardware control", "optical nanofibers", "AI-assisted development"],
@@ -14,7 +14,7 @@
     name: "Miss Align: Web based optical design",
     image: "03.gif",
     presenter: "Hao-Rong Yang 楊皓蓉",
-    presentedDate: "12:15pm Wednesday April 15, 2026",
+    presentedDate: "TBA",
     contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["optical design", "web tools", "alignment planning"],
@@ -26,7 +26,7 @@
     image: "SAIL.png",
     imageStatus: "TBD",
     presenter: "Chun-Chia Chen 陳俊嘉",
-    presentedDate: "12:15pm Wednesday April 15, 2026",
+    presentedDate: "TBA",
     contributors: "None listed",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["digital PID", "laser stabilization", "Codex"],
@@ -111,6 +111,7 @@
     description: "A sprint-planning session covering topic selection, milestones, and demo format for upcoming SAIL mini-projects."
   }
 ];
+
 
 
 
