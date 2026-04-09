@@ -18,7 +18,8 @@
     contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["光學設計", "網頁工具", "對準規劃"],
-    sourceCode: "",
+    sourceCode: "https://github.com/s20000125-alt/frequency_shift_simulator",
+    appLink: "https://s20000125-alt.github.io/frequency_shift_simulator/",
     description: "Miss Align 是一套以瀏覽器為基礎的工具，涵蓋光學系統設計、配置、對準模擬，甚至 3D 機構設計。本分享將介紹其設計目標、使用流程與實作過程，包含範例提示與提示技巧。我們也將說明 AI 輔助程式開發如何同時強化教學與研究開發效率。"
   },
   {
@@ -111,6 +112,8 @@
     description: "規劃下一階段 SAIL mini-project 的題目、里程碑與展示形式。"
   }
 ];
+
+
 
 
 

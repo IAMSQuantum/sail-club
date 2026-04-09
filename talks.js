@@ -18,7 +18,8 @@
     contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["optical design", "web tools", "alignment planning"],
-    sourceCode: "",
+    sourceCode: "https://github.com/s20000125-alt/frequency_shift_simulator",
+    appLink: "https://s20000125-alt.github.io/frequency_shift_simulator/",
     description: "Miss Align is a browser-based tool for optical system design, layout, alignment simulation and even 3D mechanical design. The presentation introduces its design goals, user flow, and how it was created include example prompts and the prompting tips and tricks. We discuss how AI-assisted coding can supercharge development both for teaching and research."
   },
   {
@@ -111,6 +112,8 @@
     description: "A sprint-planning session covering topic selection, milestones, and demo format for upcoming SAIL mini-projects."
   }
 ];
+
+
 
 
 

@@ -11,6 +11,7 @@
         labGroup: "實驗室／團隊",
         keywords: "關鍵字",
         sourceCode: "原始碼",
+        browserApp: "瀏覽器應用",
         description: "簡介",
         sourceMissing: "待補"
       }
@@ -21,6 +22,7 @@
         labGroup: "Lab/Group",
         keywords: "Keywords",
         sourceCode: "Source Code",
+        browserApp: "Browser App",
         description: "Description",
         sourceMissing: "TBD"
       };
@@ -36,6 +38,9 @@
 
     const sourceMarkup = talk.sourceCode
       ? `<a href="${talk.sourceCode}" target="_blank" rel="noopener noreferrer">${talk.sourceCode}</a>`
+      : labels.sourceMissing;
+    const appMarkup = talk.appLink
+      ? `<a href="${talk.appLink}" target="_blank" rel="noopener noreferrer">${talk.appLink}</a>`
       : labels.sourceMissing;
     const labGroupMarkup = (() => {
       const text = talk.labGroup || "";
@@ -64,6 +69,7 @@
           <p class="meta-line"><span class="meta-label">${labels.labGroup}:</span> ${labGroupMarkup}</p>
           <p class="meta-line"><span class="meta-label">${labels.keywords}:</span> ${talk.keywords.join(", ")}</p>
           <p class="meta-line"><span class="meta-label">${labels.sourceCode}:</span> ${sourceMarkup}</p>
+          <p class="meta-line"><span class="meta-label">${labels.browserApp}:</span> ${appMarkup}</p>
           <p class="meta-line"><span class="meta-label">${labels.description}:</span> ${talk.description}</p>
         </div>
       </div>
