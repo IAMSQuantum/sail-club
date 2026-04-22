@@ -1,60 +1,61 @@
-﻿const talks = [
+const talks = [
   {
-    name: "Vibe Coding 奈米光纖製程硬體控制",
+    name: "用 Vibe Coding 打造光學奈米光纖製程的實驗硬體控制",
     image: "01.gif",
     presenter: "Wen-Ting Wang",
-    presentedDate: "待公告",
-    contributors: "Chun-Chia Chen 陳俊嘉, Shayne Bennetts",
+    presentedDate: "2026 年 4 月 29 日（週三）中午 12:10",
+    contributors: "Jie-En Chen 陳杰恩、Chun-Chia Chen 陳俊嘉、Shayne Bennetts",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["硬體控制", "奈米光纖", "AI 輔助開發"],
     sourceCode: "",
     description: "本分享介紹如何以 AI 輔助方式建立奈米光纖製作與量測的硬體控制系統。我們將說明系統架構、介面設計與除錯流程，如何串接硬體控制、資料擷取與分析。重點在於以語言模型加速開發，同時維持系統可靠性、安全性與可重現性。"
   },
   {
-    name: "Miss Align：網頁式光學設計",
+    name: "幾分鐘內 Vibe Code 完成數據收集分析，並將冷原子設計工具做成網頁應用程式",
+    image: "03.gif",
+    presenter: "Jie-En Chen 陳杰恩",
+    presentedDate: "2026 年 4 月 29 日（週三）中午 12:10",
+    contributors: "Wen-Ting Wang、Chun-Chia Chen 陳俊嘉、Shayne Bennetts",
+    labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
+    keywords: ["數據收集", "分析", "冷原子設計工具"],
+    sourceCode: "",
+    description: "本分享示範如何在幾分鐘內以 Vibe Code 建立可用的數據收集與分析流程，並將冷原子設計工具做成可直接操作的網頁應用程式，提升測試效率與團隊協作速度。"
+  },
+  {
+    name: "待定",
+    image: "SAIL.png",
+    imageStatus: "TBD",
+    presenter: "Kenee Kaiser Suyo Custodio",
+    presentedDate: "2026 年 4 月 29 日（週三）中午 12:10",
+    contributors: "無",
+    labGroup: "分子/材料模擬實驗室 https://sites.google.com/site/jlkiams/",
+    keywords: ["待定"],
+    sourceCode: "",
+    description: "待定"
+  },
+  {
+    name: "Miss Align：瀏覽器版光學設計工具",
     image: "03.gif",
     presenter: "Hao-Rong Yang 楊皓蓉",
-    presentedDate: "待公告",
-    contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
+    presentedDate: "2026 年 5 月 27 日（週三）中午 12:10",
+    contributors: "Shayne Bennetts、Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
-    keywords: ["光學設計", "網頁工具", "對準規劃"],
+    keywords: ["光學設計", "對準模擬", "3D 機構設計"],
     sourceCode: "https://github.com/s20000125-alt/frequency_shift_simulator",
     appLink: "https://s20000125-alt.github.io/frequency_shift_simulator/",
     description: "Miss Align 是一套以瀏覽器為基礎的工具，涵蓋光學系統設計、配置、對準模擬，甚至 3D 機構設計。本分享將介紹其設計目標、使用流程與實作過程，包含範例提示與提示技巧。我們也將說明 AI 輔助程式開發如何同時強化教學與研究開發效率。"
   },
   {
-    name: "Vibe Coded 雷射穩頻 PID",
+    name: "用 Vibe Coding 打造雷射穩頻數位 PID",
     image: "SAIL.png",
-    imageStatus: "TBD",
+    imageStatus: "待補",
     presenter: "Chun-Chia Chen 陳俊嘉",
-    presentedDate: "待公告",
-    contributors: "None listed",
+    presentedDate: "2026 年 5 月 27 日（週三）中午 12:10",
+    contributors: "無",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["數位 PID", "雷射穩定", "Codex"],
     sourceCode: "",
     description: "我們展示如何以 Moglabs 波長計為基礎，透過幾個簡單提示，設計並實作可用於雷射頻率穩定的實用數位 PID 控制器。Codex 起草了控制邏輯、邊界情境檢查與測試骨架。結果強調可解釋的控制行為、快速迭代，以及在實驗系統中的穩健性。"
-  },
-  {
-    name: "用 Embeddings 做文獻篩選",
-    image: "SAIL_ENG.png",
-    presenter: "J.-E. Wu",
-    presentedDate: "2026 年 5 月 6 日",
-    contributors: "NLP 讀書會",
-    labGroup: "IAMS AI Methods",
-    keywords: ["embeddings", "檢索", "文獻回顧"],
-    sourceCode: "https://github.com/iams-sail-club/talk-literature-triage",
-    description: "建立輕量化文獻聚類與關聯檢索流程，協助優先判斷閱讀順序。"
-  },
-  {
-    name: "雙語提示設計（中英）",
-    image: "SAIL_ENG.png",
-    presenter: "T.-P. Hsu",
-    presentedDate: "2026 年 5 月 13 日",
-    contributors: "中英雙語小組",
-    labGroup: "IAMS Outreach",
-    keywords: ["雙語", "翻譯", "術語"],
-    sourceCode: "https://github.com/iams-sail-club/talk-bilingual-prompts",
-    description: "介紹能維持科學語意與語氣一致性的中英文技術翻譯提示模式。"
   },
   {
     name: "Agentic Coding 於實驗室自動化",
@@ -112,9 +113,3 @@
     description: "規劃下一階段 SAIL mini-project 的題目、里程碑與展示形式。"
   }
 ];
-
-
-
-
-
-

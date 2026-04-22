@@ -114,6 +114,10 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+#talk-list-may27 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .talk-item {
   background: #ffffff;
   border: 1px solid #d3dbea;
@@ -289,6 +293,10 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  #talk-list-may27 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .video-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -305,6 +313,10 @@ footer {
   }
 
   #talk-list-upcoming {
+    grid-template-columns: 1fr;
+  }
+
+  #talk-list-may27 {
     grid-template-columns: 1fr;
   }
 

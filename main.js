@@ -63,7 +63,6 @@
       </div>
       <div id="talk-details-${index}" class="talk-details">
         <div class="meta-grid">
-          ${talk.imageStatus ? `<p class="meta-line"><span class="meta-label">${isZh ? "圖片" : "Picture"}:</span> ${talk.imageStatus}</p>` : ""}
           <p class="meta-line"><span class="meta-label">${labels.presenter}:</span> ${talk.presenter}</p>
           <p class="meta-line"><span class="meta-label">${labels.contributors}:</span> ${talk.contributors}</p>
           <p class="meta-line"><span class="meta-label">${labels.labGroup}:</span> ${labGroupMarkup}</p>
