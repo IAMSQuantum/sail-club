@@ -1,4 +1,4 @@
-﻿const talks = [
+const talks = [
   {
     name: "Vibe coded experimental hardware control for optical nanofiber fabrication",
     image: "01.gif",
@@ -12,7 +12,7 @@
   },
   {
     name: "Data acquisition and analysis vibe coded in minutes and putting cold atom design tools into web apps",
-    image: "03.gif",
+    image: "jieEn.png",
     presenter: "Jie-En Chen 陳杰恩",
     presentedDate: "12:10pm Wednesday April 29, 2026",
     contributors: "Wen-Ting Wang, Chun-Chia Chen 陳俊嘉, Shayne Bennetts",
@@ -113,6 +113,7 @@
     description: "A sprint-planning session covering topic selection, milestones, and demo format for upcoming SAIL mini-projects."
   }
 ];
+
 
 
 

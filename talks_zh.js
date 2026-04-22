@@ -12,7 +12,7 @@ const talks = [
   },
   {
     name: "幾分鐘內 Vibe Code 完成數據收集分析，並將冷原子設計工具做成網頁應用程式",
-    image: "03.gif",
+    image: "jieEn.png",
     presenter: "Jie-En Chen 陳杰恩",
     presentedDate: "2026 年 4 月 29 日（週三）中午 12:10",
     contributors: "Wen-Ting Wang、Chun-Chia Chen 陳俊嘉、Shayne Bennetts",
