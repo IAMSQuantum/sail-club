@@ -22,16 +22,16 @@ const talks = [
     description: "A quick demonstration of how vibe coding can produce practical data acquisition and analysis workflows in minutes, and how cold-atom design tools can be turned into usable browser applications for faster collaboration and testing."
   },
   {
-    name: "TBA",
+    name: "Accelerating First Principles Conformational Search of Glycan via Neural Network Potentials",
     image: "SAIL.png",
     imageStatus: "TBD",
-    presenter: "Kenee Kaiser Suyo Custodio",
+    presenter: "Dr. Kenee Kaiser Custodio",
     presentedDate: "12:10pm Wednesday April 29, 2026",
     contributors: "None listed",
     labGroup: "Molecular and Material Modelling Lab https://sites.google.com/site/jlkiams/",
-    keywords: ["TBA"],
+    keywords: ["glycans", "conformational search", "neural network potentials", "ab initio"],
     sourceCode: "",
-    description: "TBA"
+    description: "Traditional ab initio approaches for conducting structure searches of highly complex systems, such as carbohydrates (glycans), are frequently limited by substantial time requirements and high computational costs. To address this, we utilize machine learning-driven methods to significantly accelerate the structure search process. Specifically, neural network potentials (NNPs) are employed to facilitate the identification of low-energy candidate structures for subsequent geometry optimization using the reference ab initio method. These NNPs are trained on energy and atomic force data generated at the chosen reference ab initio method. By effectively mimicking the potential energy surface of the reference method, the NNP-based approach enables geometry optimizations that are at least 100 times faster than traditional ab initio methods, offering a scalable and efficient solution for the conformational search of complex biomolecules."
   },
   {
     name: "Miss Align: Web based optical design",

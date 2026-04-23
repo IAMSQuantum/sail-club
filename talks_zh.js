@@ -22,16 +22,16 @@ const talks = [
     description: "本分享示範如何在幾分鐘內以 Vibe Code 建立可用的數據收集與分析流程，並將冷原子設計工具做成可直接操作的網頁應用程式，提升測試效率與團隊協作速度。"
   },
   {
-    name: "待定",
+    name: "以神經網路勢能加速醣類第一原理構形搜尋",
     image: "SAIL.png",
     imageStatus: "TBD",
-    presenter: "Kenee Kaiser Suyo Custodio",
+    presenter: "Dr. Kenee Kaiser Custodio",
     presentedDate: "2026 年 4 月 29 日（週三）中午 12:10",
     contributors: "無",
     labGroup: "分子/材料模擬實驗室 https://sites.google.com/site/jlkiams/",
-    keywords: ["待定"],
+    keywords: ["醣類", "構形搜尋", "神經網路勢能", "第一原理"],
     sourceCode: "",
-    description: "待定"
+    description: "對於如醣類（glycans）這類高度複雜系統，傳統第一原理結構搜尋方法常受限於龐大的時間需求與高昂計算成本。為解決此問題，我們採用機器學習方法大幅加速搜尋流程。具體而言，我們使用神經網路勢能（NNP）先快速找出低能量候選構形，再以參考第一原理方法進行幾何最佳化。NNP 以該參考方法所產生的能量與原子力資料訓練，能有效擬合其勢能面。此作法可讓幾何最佳化速度達到傳統第一原理方法的至少 100 倍，為複雜生物分子的構形搜尋提供可擴展且高效率的解決方案。"
   },
   {
     name: "Miss Align：瀏覽器版光學設計工具",
