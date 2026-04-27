@@ -19,6 +19,7 @@ const talks = [
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["數據收集", "分析", "冷原子設計工具"],
     sourceCode: "",
+    appLink: "https://yb-polarizability-calculator-tb3yemhxkfbttaqt3y5b5l.streamlit.app/#1-s0",
     description: "本分享示範如何在幾分鐘內以 Vibe Code 建立可用的數據收集與分析流程，並將冷原子設計工具做成可直接操作的網頁應用程式，提升測試效率與團隊協作速度。"
   },
   {

@@ -19,6 +19,7 @@ const talks = [
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["data acquisition", "analysis", "cold atom design tools"],
     sourceCode: "",
+    appLink: "https://yb-polarizability-calculator-tb3yemhxkfbttaqt3y5b5l.streamlit.app/#1-s0",
     description: "A quick demonstration of how vibe coding can produce practical data acquisition and analysis workflows in minutes, and how cold-atom design tools can be turned into usable browser applications for faster collaboration and testing."
   },
   {
