@@ -38,7 +38,7 @@ const talks = [
     name: "Miss Align: Web based optical design",
     image: "03.gif",
     presenter: "Hao-Rong Yang 楊皓蓉",
-    presentedDate: "12pm Wednesday May 27, 2026",
+    presentedDate: "12pm Tuesday May 26, 2026",
     contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["optical design", "alignment simulation", "3D mechanical design"],
@@ -48,70 +48,14 @@ const talks = [
   },
   {
     name: "A vibe coded laser stabilization PID",
-    image: "SAIL.png",
-    imageStatus: "TBD",
-    presenter: "Chun-Chia Chen 陳俊嘉",
-    presentedDate: "12pm Wednesday May 27, 2026",
-    contributors: "None listed",
+    image: "Wavemeter.gif",
+    presenter: "Hao-Rong Yang 楊皓蓉",
+    presentedDate: "12pm Tuesday May 26, 2026",
+    contributors: "Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["digital PID", "laser stabilization", "Codex"],
     sourceCode: "",
-    description: "We show how a practical digital PID controller for laser frequency stabilization base on a moglabs wavemeter can be designed, implemented with justa few simple prompts. Codex drafted control logic, edge-case checks, and test scaffolds. Results emphasize interpretable control behavior, fast iteration, and experimental robustness for real systems."
-  },
-  {
-    name: "Agentic Coding for Lab Automation",
-    image: "SAIL_ENG.png",
-    presenter: "R. Bennett",
-    presentedDate: "May 20, 2026",
-    contributors: "Automation Team",
-    labGroup: "IAMS Experimental Systems",
-    keywords: ["agents", "automation", "instrument control"],
-    sourceCode: "https://github.com/iams-sail-club/talk-agentic-lab",
-    description: "Examples of using coding agents to draft scripts for instrument routines and data housekeeping tasks."
-  },
-  {
-    name: "Evaluation Basics: Hallucination and Grounding",
-    image: "SAIL_ENG.png",
-    presenter: "S. Huang",
-    presentedDate: "May 27, 2026",
-    contributors: "Model Evaluation Group",
-    labGroup: "IAMS AI Safety Discussions",
-    keywords: ["evaluation", "hallucination", "grounding"],
-    sourceCode: "https://github.com/iams-sail-club/talk-eval-basics",
-    description: "Practical checks to reduce unsupported outputs and improve citation-grounded responses in lab workflows."
-  },
-  {
-    name: "RAG for Internal Knowledge Notes",
-    image: "SAIL_ENG.png",
-    presenter: "M. Lee",
-    presentedDate: "June 3, 2026",
-    contributors: "Knowledge Management Group",
-    labGroup: "IAMS Shared Infrastructure",
-    keywords: ["RAG", "vector database", "knowledge base"],
-    sourceCode: "https://github.com/iams-sail-club/talk-rag-notes",
-    description: "How to build a small retrieval system from meeting notes and wiki pages for quick Q&A across teams."
-  },
-  {
-    name: "AI-Generated Tests for Scientific Code",
-    image: "SAIL_ENG.png",
-    presenter: "K. Tsai",
-    presentedDate: "June 10, 2026",
-    contributors: "Software Reliability Group",
-    labGroup: "IAMS Software Stack",
-    keywords: ["testing", "unit tests", "CI"],
-    sourceCode: "https://github.com/iams-sail-club/talk-ai-testing",
-    description: "Strategies for using AI to draft meaningful tests and then harden them with domain constraints."
-  },
-  {
-    name: "Planning a SAIL Project Sprint",
-    image: "SAIL_ENG.png",
-    presenter: "Club Committee",
-    presentedDate: "June 17, 2026",
-    contributors: "All SAIL Members",
-    labGroup: "IAMS + Collaborators",
-    keywords: ["project planning", "collaboration", "roadmap"],
-    sourceCode: "https://github.com/iams-sail-club/talk-project-sprint",
-    description: "A sprint-planning session covering topic selection, milestones, and demo format for upcoming SAIL mini-projects."
+    description: "We show how a practical digital PID controller for laser frequency stabilization based on a MOGLabs wavemeter can be designed and implemented with just a few simple prompts. Codex drafted control logic, edge-case checks, and test scaffolds. Results emphasize interpretable control behavior, fast iteration, and experimental robustness for real systems."
   }
 ];
 

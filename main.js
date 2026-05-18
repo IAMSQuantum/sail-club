@@ -5,7 +5,8 @@
   const isZh = (document.documentElement.lang || "").toLowerCase().startsWith("zh");
   const labels = isZh
     ? {
-        presented: "發表日期",
+        upcoming: "預計發表",
+        past: "發表日期",
         presenter: "主講人／作者",
         contributors: "協作者",
         labGroup: "實驗室／團隊",
@@ -16,7 +17,8 @@
         sourceMissing: "待補"
       }
     : {
-        presented: "To be presented",
+        upcoming: "To be presented",
+        past: "Presented",
         presenter: "Presenter",
         contributors: "Contributors",
         labGroup: "Lab/Group",
@@ -27,6 +29,24 @@
         sourceMissing: "TBD"
       };
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const isPastDate = (dateStr) => {
+    const monthRe = /(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})/i;
+    const zhRe = /(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/;
+    const m = dateStr.match(monthRe);
+    let parsed;
+    if (m) {
+      parsed = new Date(`${m[1]} ${m[2]}, ${m[3]}`);
+    } else {
+      const z = dateStr.match(zhRe);
+      if (z) parsed = new Date(Number(z[1]), Number(z[2]) - 1, Number(z[3]));
+    }
+    if (!parsed || isNaN(parsed.getTime())) return false;
+    parsed.setHours(0, 0, 0, 0);
+    return parsed < today;
+  };
+
   const start = Number.isInteger(options.start) ? options.start : 0;
   const count = Number.isInteger(options.count) ? options.count : talks.length;
   const subset = talks.slice(start, start + count);
@@ -36,6 +56,7 @@
     const item = document.createElement("article");
     item.className = "talk-item";
 
+    const dateLabel = isPastDate(talk.presentedDate) ? labels.past : labels.upcoming;
     const sourceMarkup = talk.sourceCode
       ? `<a href="${talk.sourceCode}" target="_blank" rel="noopener noreferrer">${talk.sourceCode}</a>`
       : labels.sourceMissing;
@@ -59,7 +80,7 @@
           <span class="talk-arrow" aria-hidden="true">›</span>
         </div>
         <p class="talk-presenter">${labels.presenter}: ${talk.presenter}</p>
-        <p class="talk-date">${labels.presented}: ${talk.presentedDate}</p>
+        <p class="talk-date">${dateLabel}: ${talk.presentedDate}</p>
       </div>
       <div id="talk-details-${index}" class="talk-details">
         <div class="meta-grid">

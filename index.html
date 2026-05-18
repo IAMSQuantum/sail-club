@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAIL Club | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260518b">
 </head>
 <body>
   <header>
@@ -32,14 +32,12 @@
       <p>Come along and share (free) lunch with others from the institute who are interesting in using AI to make things better and easier.</p>
       <p>If you have a project, tool or technique that you would be willing to talk about and share please <a href="#contact">contact</a> the organizers.</p>
       <h1>Upcoming Lunches</h1>
-      <h2>Next lunch: 12pm, Wednesday April 29, 2026</h2>
-      <p><a href="https://forms.gle/E3YfHMaRzpNZuZyf6" target="_blank" rel="noopener noreferrer">Register by 12pm April 27th for SAIL Club Lunch</a></p>
-      <p><strong>Place: Dr. Poe Lecture Hall</strong></p>
-      <section id="talk-list-upcoming" class="talk-list" aria-label="Upcoming talks"></section>
-      <h2>12pm Wednesday May 27, 2026:</h2>
-      <section id="talk-list-may27" class="talk-list" aria-label="May 27 talks"></section>
+      <h2>Next lunch: 12pm, Tuesday May 26, 2026</h2>
+      <p><strong>Place: C.T. Chang Lecture Hall (Rm 401)</strong></p>
+      <section id="talk-list-may26" class="talk-list" aria-label="May 26 talks"></section>
       <h1>Archive:</h1>
-      <p>[Empty]</p>
+      <h2>12pm, Wednesday April 29, 2026 &mdash; Dr. Poe Lecture Hall</h2>
+      <section id="talk-list-archive-apr29" class="talk-list" aria-label="April 29 archive"></section>
       <h3 id="contact">Contact:</h3>
       <p>If you have a project, a new technique or a new tool that you would be willing to share please contact</p>
       <p>Shayne Bennetts 肖恩 <a href="mailto:s.p.bennetts@g.iams.sinica.edu.tw">s.p.bennetts@g.iams.sinica.edu.tw</a></p>
@@ -67,11 +65,11 @@
     </div>
   </footer>
 
-  <script src="talks.js?v=20260406"></script>
-  <script src="main.js?v=20260406"></script>
+  <script src="talks.js?v=20260518b"></script>
+  <script src="main.js?v=20260518b"></script>
   <script>
-    renderTalks("talk-list-upcoming", { start: 0, count: 3 });
-    renderTalks("talk-list-may27", { start: 3, count: 2 });
+    renderTalks("talk-list-may26", { start: 3, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });
   </script>
 </body>
 </html>

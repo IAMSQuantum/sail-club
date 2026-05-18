@@ -106,16 +106,8 @@ main {
 
 .talk-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-}
-
-#talk-list-upcoming {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-#talk-list-may27 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .talk-item {
@@ -355,18 +347,6 @@ footer {
 .iams-logo { height: 120px; width: auto; }
 
 @media (max-width: 980px) {
-  .talk-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #talk-list-upcoming {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #talk-list-may27 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .video-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -379,14 +359,6 @@ footer {
   }
 
   .talk-list {
-    grid-template-columns: 1fr;
-  }
-
-  #talk-list-upcoming {
-    grid-template-columns: 1fr;
-  }
-
-  #talk-list-may27 {
     grid-template-columns: 1fr;
   }
 

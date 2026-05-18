@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAIL Club | 首頁</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260518b">
 </head>
 <body>
   <header>
@@ -33,14 +33,12 @@
       <p>如果你有專案、工具或技巧願意分享，歡迎<a href="#contact">聯絡</a>主辦人。</p>
 
       <h1>即將到來的午餐分享</h1>
-      <h2>下次午餐：2026年4月29日（週三）中午12點</h2>
-      <p><a href="https://forms.gle/E3YfHMaRzpNZuZyf6" target="_blank" rel="noopener noreferrer">請於4月27日中午12點前報名 SAIL Club 午餐</a></p>
-      <p><strong>地點：浦大邦紀念講堂</strong></p>
-      <section id="talk-list-upcoming" class="talk-list" aria-label="Upcoming talks zh"></section>
-      <h2>2026年5月27日（週三）中午12點：</h2>
-      <section id="talk-list-may27" class="talk-list" aria-label="May 27 talks zh"></section>
+      <h2>下次午餐：2026年5月26日（週二）中午12點</h2>
+      <p><strong>地點：於 R401 張昭鼎講堂舉辦</strong></p>
+      <section id="talk-list-may26" class="talk-list" aria-label="May 26 talks zh"></section>
       <h1>過往紀錄：</h1>
-      <p>[空]</p>
+      <h2>2026年4月29日（週三）中午12點 — 浦大邦紀念講堂</h2>
+      <section id="talk-list-archive-apr29" class="talk-list" aria-label="April 29 archive zh"></section>
       <h3 id="contact">聯絡方式：</h3>
       <p>如果你有專案、新技巧或新工具願意分享，請聯絡</p>
       <p>Shayne Bennetts 肖恩 <a href="mailto:s.p.bennetts@g.iams.sinica.edu.tw">s.p.bennetts@g.iams.sinica.edu.tw</a></p>
@@ -68,11 +66,11 @@
     </div>
   </footer>
 
-  <script src="talks_zh.js?v=20260406"></script>
-  <script src="main.js?v=20260406"></script>
+  <script src="talks_zh.js?v=20260518b"></script>
+  <script src="main.js?v=20260518b"></script>
   <script>
-    renderTalks("talk-list-upcoming", { start: 0, count: 3 });
-    renderTalks("talk-list-may27", { start: 3, count: 2 });
+    renderTalks("talk-list-may26", { start: 3, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });
   </script>
 </body>
 </html>
