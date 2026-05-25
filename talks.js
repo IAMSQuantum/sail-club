@@ -49,9 +49,9 @@ const talks = [
   {
     name: "A vibe coded laser stabilization PID",
     image: "Wavemeter.gif",
-    presenter: "Hao-Rong Yang 楊皓蓉",
+    presenter: "Chun-Chia Chen 陳俊嘉",
     presentedDate: "12pm Tuesday May 26, 2026",
-    contributors: "Chun-Chia Chen 陳俊嘉",
+    contributors: "Hao-Rong Yang 楊皓蓉",
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["digital PID", "laser stabilization", "Codex"],
     sourceCode: "",
