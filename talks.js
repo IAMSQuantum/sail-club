@@ -13,8 +13,7 @@ const talks = [
   },
   {
     name: "An open source graphical tool for AI automation of tasks without any coding",
-    image: "SAIL.png",
-    imageStatus: "TBD",
+    image: "n8n20260615.png",
     presenter: "Sam Chang",
     presentedDate: "12pm Tuesday June 23, 2026",
     contributors: "None listed",

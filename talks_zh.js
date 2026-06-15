@@ -13,8 +13,7 @@ const talks = [
   },
   {
     name: "開源圖形化工具：無需寫程式即可用 AI 自動化工作",
-    image: "SAIL.png",
-    imageStatus: "TBD",
+    image: "n8n20260615.png",
     presenter: "Sam Chang",
     presentedDate: "2026 年 6 月 23 日（週二）中午 12點",
     contributors: "無",
