@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAIL Club | 首頁</title>
-  <link rel="stylesheet" href="style.css?v=20260518b">
+  <link rel="stylesheet" href="style.css?v=20260615a">
 </head>
 <body>
   <header>
@@ -33,10 +33,12 @@
       <p>如果你有專案、工具或技巧願意分享，歡迎<a href="#contact">聯絡</a>主辦人。</p>
 
       <h1>即將到來的午餐分享</h1>
-      <h2>下次午餐：2026年5月26日（週二）中午12點</h2>
-      <p><strong>地點：於 R401 張昭鼎講堂舉辦</strong></p>
-      <section id="talk-list-may26" class="talk-list" aria-label="May 26 talks zh"></section>
+      <h2>下次午餐：2026年6月23日（週二）中午12點</h2>
+      <p><strong>地點：C. T. Chang（401 室）</strong></p>
+      <section id="talk-list-jun23" class="talk-list" aria-label="June 23 talks zh"></section>
       <h1>過往紀錄：</h1>
+      <h2>2026年5月26日（週二）中午12點 — C. T. Chang（401 室）</h2>
+      <section id="talk-list-archive-may26" class="talk-list" aria-label="May 26 archive zh"></section>
       <h2>2026年4月29日（週三）中午12點 — 浦大邦紀念講堂</h2>
       <section id="talk-list-archive-apr29" class="talk-list" aria-label="April 29 archive zh"></section>
       <h3 id="contact">聯絡方式：</h3>
@@ -66,11 +68,12 @@
     </div>
   </footer>
 
-  <script src="talks_zh.js?v=20260518b"></script>
-  <script src="main.js?v=20260518b"></script>
+  <script src="talks_zh.js?v=20260615a"></script>
+  <script src="main.js?v=20260615a"></script>
   <script>
-    renderTalks("talk-list-may26", { start: 3, count: 2 });
-    renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });
+    renderTalks("talk-list-jun23", { start: 0, count: 3 });
+    renderTalks("talk-list-archive-may26", { start: 3, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 5, count: 3 });
   </script>
 </body>
 </html>
