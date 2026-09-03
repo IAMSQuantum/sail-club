@@ -13,6 +13,7 @@
         keywords: "關鍵字",
         sourceCode: "原始碼",
         browserApp: "瀏覽器應用",
+        slides: "投影片",
         description: "簡介",
         sourceMissing: "待補"
       }
@@ -25,6 +26,7 @@
         keywords: "Keywords",
         sourceCode: "Source Code",
         browserApp: "Browser App",
+        slides: "Slides",
         description: "Description",
         sourceMissing: "TBD"
       };
@@ -63,6 +65,25 @@
     const appMarkup = talk.appLink
       ? `<a href="${talk.appLink}" target="_blank" rel="noopener noreferrer">${talk.appLink}</a>`
       : labels.sourceMissing;
+    // Local file links (slides, extras) show just the file name as link text.
+    const fileLabel = (url) => {
+      try {
+        return decodeURIComponent(url.split("/").pop());
+      } catch (e) {
+        return url;
+      }
+    };
+    const slidesMarkup = talk.slides
+      ? `<a href="${talk.slides}" target="_blank" rel="noopener noreferrer">${fileLabel(talk.slides)}</a>`
+      : labels.sourceMissing;
+    const extrasMarkup = Array.isArray(talk.extras)
+      ? talk.extras
+          .map(
+            (extra) =>
+              `<p class="meta-line"><span class="meta-label">${extra.label}:</span> <a href="${extra.url}" target="_blank" rel="noopener noreferrer">${fileLabel(extra.url)}</a></p>`
+          )
+          .join("")
+      : "";
     const labGroupMarkup = (() => {
       const text = talk.labGroup || "";
       const match = text.match(/^(.*?)(https?:\/\/\S+)$/);
@@ -90,6 +111,8 @@
           <p class="meta-line"><span class="meta-label">${labels.keywords}:</span> ${talk.keywords.join(", ")}</p>
           <p class="meta-line"><span class="meta-label">${labels.sourceCode}:</span> ${sourceMarkup}</p>
           <p class="meta-line"><span class="meta-label">${labels.browserApp}:</span> ${appMarkup}</p>
+          <p class="meta-line"><span class="meta-label">${labels.slides}:</span> ${slidesMarkup}</p>
+          ${extrasMarkup}
           <p class="meta-line"><span class="meta-label">${labels.description}:</span> ${talk.description}</p>
         </div>
       </div>

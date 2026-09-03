@@ -1,5 +1,27 @@
 const talks = [
   {
+    name: "用 ChatGPT 與 Claude Code 打造一維光學模擬器",
+    image: "4-1.png",
+    presenter: "Yi-Quan Li 李翊銓 (Eric)",
+    presentedDate: "2026 年 9 月 22 日（週二）中午 12點",
+    contributors: "無",
+    labGroup: "IAMS Lab 107",
+    keywords: ["光學模擬", "光束傳播", "Claude Code", "ChatGPT", "Tkinter 圖形介面"],
+    sourceCode: "https://github.com/Li-Yi-2002/IAMS_Lab107_optical_simulation",
+    description: "在這場短講中，我將分享如何運用生成式 AI（ChatGPT 與 Claude Code）打造一個一維光學模擬器。它支援多種光學元件（螺旋相位板、軸稜鏡、薄透鏡與光闌），並在互動式圖形介面中模擬高斯光束穿過這些元件的傳播。我會展示我的工作流程以及我與 AI 的對話。使用 AI 確實大幅加快了我的進度，也省下許多時間。如果我的經驗對你有幫助，那就太好了！"
+  },
+  {
+    name: "用 AI 逆向工程停產產品：讓 Air Mentor 8099-AP 空氣品質感測器重生",
+    image: "4-2.png",
+    presenter: "Yi-Quan Li 李翊銓 (Eric)",
+    presentedDate: "2026 年 9 月 22 日（週二）中午 12點",
+    contributors: "無",
+    labGroup: "IAMS Lab 107",
+    keywords: ["逆向工程", "空氣品質感測器", "藍牙低功耗", "Raspberry Pi", "ChatGPT", "Claude Code"],
+    sourceCode: "https://github.com/Li-Yi-2002/Air-mentor----revive-your-old-air-sensor-",
+    description: "在第二場短講中，我將展示如何用 AI 逆向工程一款已停產的產品：Air Mentor 8099-AP 空氣品質感測器，它的製造商與 App 都已不存在。在 AI 協助下解讀感測器的藍牙低功耗（BLE）廣播封包後，這台裝置現在可以將 CO2、PM2.5、PM10、TVOC、溫度與濕度記錄到 Raspberry Pi，並透過簡單的網頁儀表板呈現。我會展示我的工作流程與我和 AI 的對話，以及它如何幫我省下大量時間。"
+  },
+  {
     name: "用 Claude 加速理論推導",
     image: "SAIL.png",
     imageStatus: "TBD",
@@ -9,6 +31,7 @@ const talks = [
     labGroup: "LYHsu 團隊",
     keywords: ["理論推導"],
     sourceCode: "",
+    slides: "Presentations/3-1-Chih-En%20Shen%20-%20Accelerating%20Theoretical%20Derivations%20w%20Claude.pdf",
     description: "本分享介紹我用 AI 輔助進行理論推導研究的工作流程，重點放在 AI 如何協助處理冗長的記帳式（bookkeeping）步驟。我將說明如何運用語言模型閱讀舊論文、逐步搭建長篇推導，並檢查中間結果的一致性。"
   },
   {
@@ -20,6 +43,7 @@ const talks = [
     labGroup: "",
     keywords: ["n8n", "無程式碼自動化", "工作流程自動化"],
     sourceCode: "https://github.com/n8n-io/n8n",
+    slides: "Presentations/3-2-Build%20AI%20automation%20Workflow%20with%20one%20visual%20tool(V2).pdf",
     description: "我將介紹一個開源工具 n8n（https://github.com/n8n-io/n8n），它提供簡單的圖形化介面，讓你可以運用 Claude 或 ChatGPT 模型的智能來自動化各種簡單任務。我會示範 n8n 的介面，並展示其在影片字幕編輯、以及一個用於擷取與處理輸入資料的 LINE Bot 等任務上的應用。（本場分享將以中文進行）"
   },
   {
@@ -32,6 +56,7 @@ const talks = [
     keywords: ["振動模式視覺化", "簡正模式", "superpowers"],
     sourceCode: "https://github.com/appendko/vib_viewer",
     appLink: "https://appendko.github.io/vib_viewer/",
+    slides: "Presentations/3-3-Qian-Rui%20Huang%20-%20Building%20a%20Custom%20Vibrational%20Mode%20Viewer%20with%20Superpowered%20Claude%20Code.pdf",
     description: "本分享將展示如何使用搭配「superpowers」外掛的 Claude Code，在幾個晚上的時間內，打造一個支援自訂振動座標的瀏覽器版振動模式檢視器。「superpowers」是一套會在動手寫程式前強制執行規劃與規格撰寫的結構化工作流程。本場分享聚焦於科學家視角的開發體驗：這種「先規劃」的方式如何呼應我們拆解研究問題的思路，以及這對研究人員打造小眾但實際需求的工具有何意義。"
   },
   {
@@ -44,6 +69,11 @@ const talks = [
     keywords: ["光學設計", "對準模擬", "3D 機構設計"],
     sourceCode: "https://github.com/s20000125-alt/frequency_shift_simulator",
     appLink: "https://s20000125-alt.github.io/frequency_shift_simulator/",
+    slides: "",
+    extras: [
+      { label: "示範網頁（用 AI 打造的 SAIL Club 網站）", url: "Presentations/SAIL%20web.html" },
+      { label: "手勢翻頁論文閱讀器（Python 工具）", url: "Presentations/gesture_paper_reader.py" }
+    ],
     description: "Miss Align 是一套以瀏覽器為基礎的工具，涵蓋光學系統設計、配置、對準模擬，甚至 3D 機構設計。本分享將介紹其設計目標、使用流程與實作過程，包含範例提示與提示技巧。我們也將說明 AI 輔助程式開發如何同時強化教學與研究開發效率。"
   },
   {
@@ -55,6 +85,7 @@ const talks = [
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["數位 PID", "雷射穩定", "Codex"],
     sourceCode: "",
+    slides: "Presentations/2-2-Chun-ChiaChen-Sail%20club_Wavemeter.pdf",
     description: "我們展示如何以 MOGLabs 波長計為基礎，透過幾個簡單提示，設計並實作可用於雷射頻率穩定的實用數位 PID 控制器。Codex 起草了控制邏輯、邊界情境檢查與測試骨架。結果強調可解釋的控制行為、快速迭代，以及在實驗系統中的穩健性。"
   },
   {
@@ -66,6 +97,7 @@ const talks = [
     labGroup: "IAMS Yb Lab https://iamsquantum.github.io/",
     keywords: ["硬體控制", "奈米光纖", "AI 輔助開發"],
     sourceCode: "",
+    slides: "Presentations/1-1-Wen-TingWang-AI%20assisted%20Coding.pdf",
     description: "本分享介紹如何以 AI 輔助方式建立奈米光纖製作與量測的硬體控制系統。我們將說明系統架構、介面設計與除錯流程，如何串接硬體控制、資料擷取與分析。重點在於以語言模型加速開發，同時維持系統可靠性、安全性與可重現性。"
   },
   {
@@ -78,6 +110,7 @@ const talks = [
     keywords: ["數據收集", "分析", "冷原子設計工具"],
     sourceCode: "",
     appLink: "https://yb-polarizability-calculator-tb3yemhxkfbttaqt3y5b5l.streamlit.app/#1-s0",
+    slides: "Presentations/1-2-JieEnChen-AI%20assisted%20tool%20building.pdf",
     description: "本分享示範如何在幾分鐘內以 Vibe Code 建立可用的數據收集與分析流程，並將冷原子設計工具做成可直接操作的網頁應用程式，提升測試效率與團隊協作速度。"
   },
   {

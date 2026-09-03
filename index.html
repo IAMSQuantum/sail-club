@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAIL Club | Home</title>
-  <link rel="stylesheet" href="style.css?v=20260615a">
+  <link rel="stylesheet" href="style.css?v=20260903">
 </head>
 <body>
   <header>
@@ -32,10 +32,12 @@
       <p>Come along and share (free) lunch with others from the institute who are interesting in using AI to make things better and easier.</p>
       <p>If you have a project, tool or technique that you would be willing to talk about and share please <a href="#contact">contact</a> the organizers.</p>
       <h1>Upcoming Lunches</h1>
-      <h2>Next lunch: 12pm, Tuesday June 23, 2026</h2>
+      <h2>Next lunch: 12pm, Tuesday September 22, 2026</h2>
       <p><strong>Place: C.T. Chang Lecture Hall (Rm 401)</strong></p>
-      <section id="talk-list-jun23" class="talk-list" aria-label="June 23 talks"></section>
+      <section id="talk-list-sep22" class="talk-list" aria-label="September 22 talks"></section>
       <h1>Archive:</h1>
+      <h2>12pm, Tuesday June 23, 2026 &mdash; C.T. Chang Lecture Hall (Rm 401)</h2>
+      <section id="talk-list-archive-jun23" class="talk-list" aria-label="June 23 archive"></section>
       <h2>12pm, Tuesday May 26, 2026 &mdash; C.T. Chang Lecture Hall (Rm 401)</h2>
       <section id="talk-list-archive-may26" class="talk-list" aria-label="May 26 archive"></section>
       <h2>12pm, Wednesday April 29, 2026 &mdash; Dr. Poe Lecture Hall</h2>
@@ -67,12 +69,13 @@
     </div>
   </footer>
 
-  <script src="talks.js?v=20260615a"></script>
-  <script src="main.js?v=20260615a"></script>
+  <script src="talks.js?v=20260903"></script>
+  <script src="main.js?v=20260903"></script>
   <script>
-    renderTalks("talk-list-jun23", { start: 0, count: 3 });
-    renderTalks("talk-list-archive-may26", { start: 3, count: 2 });
-    renderTalks("talk-list-archive-apr29", { start: 5, count: 3 });
+    renderTalks("talk-list-sep22", { start: 0, count: 2 });
+    renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });
+    renderTalks("talk-list-archive-may26", { start: 5, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });
   </script>
 </body>
 </html>

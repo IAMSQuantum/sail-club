@@ -21,16 +21,20 @@ Contacts in the footer:
 | `style.css` | All styles. 2-column grid for `.talk-list` at desktop, collapses to 1-col under 720px. |
 | `*.png`, `*.gif`, `*.jpg` | Logos and talk thumbnails. **Filenames are case-sensitive on the live host** (e.g. `Wavemeter.gif`, not `wavemeter.gif`). |
 | `IAMS_AI_Guidelines.pdf` | Linked from the Resources page. |
+| `Presentations/` | Slide PDFs and other files from past talks, linked from talk cards via `slides` / `extras`. Naming convention `<session>-<talk>-<Presenter>-<title>.pdf` (e.g. `3-1-…`). Filenames contain spaces — **URL-encode them (`%20`) in `talks*.js`**. |
 
 ## How talks render — renderer contract
 
 `index.html` and `index_zh.html` each have one or more `<section id="talk-list-XYZ">` containers, then call `renderTalks("talk-list-XYZ", { start, count })` to slice into the shared `talks` array.
 
-Example (current state):
+Example (current state, Sept 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-may26", { start: 3, count: 2 });          // entries 3..4
-renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });   // entries 0..2
+renderTalks("talk-list-sep22", { start: 0, count: 2 });           // upcoming: Eric's two short talks
+renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });   // archive
+renderTalks("talk-list-archive-may26", { start: 5, count: 2 });   // archive
+renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });   // archive
 ```
+When a new lunch is added, **prepend** its talks to both arrays and shift every `start` by the number of talks added.
 
 **Critical invariants:**
 1. `talks.js` and `talks_zh.js` must have **identical order** — `start`/`count` slices both arrays the same way. If you add/remove/reorder a talk, do it in both files in the same position.
@@ -52,9 +56,15 @@ renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });   // entries 0..
   keywords: ["a", "b"],
   sourceCode: "https://...",          // empty string → renders "TBD" / "待補"
   appLink: "https://...",             // optional — empty → "TBD" / "待補"
+  slides: "Presentations/1-1-Name-Title.pdf",   // optional — URL-encode spaces; empty/missing → "TBD" / "待補"
+  extras: [                           // optional — extra links (demo pages, scripts). Rendered as one line each, only if present.
+    { label: "Demo webpage", url: "Presentations/SAIL%20web.html" }
+  ],
   description: "..."
 }
 ```
+
+`slides` and `extras` links display just the decoded file name as link text (see `fileLabel` in `main.js`). `extras[].label` is free text and must be written separately in `talks.js` (English) and `talks_zh.js` (中文).
 
 `labGroup` URL-extraction regex (`main.js:46-52`) requires the URL at the **end** of the string with no trailing space/punctuation. If you ever store the lab name and URL together with a description after the URL, the link will break — split them or fix the regex.
 
@@ -77,6 +87,13 @@ renderTalks("talk-list-archive-apr29", { start: 0, count: 3 });   // entries 0..
 2. Reorder the `renderTalks(...)` calls if needed — the slices into the `talks` array stay the same, but the order of calls determines visual order on the page.
 3. No need to touch `talks.js` — the past/upcoming label flips automatically based on today's date.
 
+### Add slides for a past talk
+1. Drop the PDF into `Presentations/` following the `<session>-<talk>-<Presenter>-<title>.pdf` convention.
+2. Set `slides: "Presentations/<URL-encoded filename>.pdf"` on the talk in **both** `talks.js` and `talks_zh.js`.
+3. Bump cache-busting (see below).
+
+Still missing as of 2026-09-03: slides for Hao-Rong Yang (session 2-1, has `extras` links instead) and Kenee Kaiser Custodio (session 1-3).
+
 ### Add an image
 - Put it in the repo root alongside the HTML.
 - Reference by **exact filename case** (`Wavemeter.gif`, not `wavemeter.gif`). Windows hides case bugs locally but GitHub Pages will 404.
@@ -88,7 +105,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260903` on all four pages.
 
 ## Layout / CSS notes
 
