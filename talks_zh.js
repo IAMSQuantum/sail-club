@@ -5,7 +5,7 @@ const talks = [
     presenter: "Yi-Quan Li 李翊銓 (Eric)",
     presentedDate: "2026 年 9 月 22 日（週二）中午 12點",
     contributors: "無",
-    labGroup: "IAMS Lab 107",
+    labGroup: "IAMS Lab 107 https://sites.google.com/view/iamslab107/home",
     keywords: ["光學模擬", "光束傳播", "Claude Code", "ChatGPT", "Tkinter 圖形介面"],
     sourceCode: "https://github.com/Li-Yi-2002/IAMS_Lab107_optical_simulation",
     description: "在這場短講中，我將分享如何運用生成式 AI（ChatGPT 與 Claude Code）打造一個一維光學模擬器。它支援多種光學元件（螺旋相位板、軸稜鏡、薄透鏡與光闌），並在互動式圖形介面中模擬高斯光束穿過這些元件的傳播。我會展示我的工作流程以及我與 AI 的對話。使用 AI 確實大幅加快了我的進度，也省下許多時間。如果我的經驗對你有幫助，那就太好了！"
@@ -16,7 +16,7 @@ const talks = [
     presenter: "Yi-Quan Li 李翊銓 (Eric)",
     presentedDate: "2026 年 9 月 22 日（週二）中午 12點",
     contributors: "無",
-    labGroup: "IAMS Lab 107",
+    labGroup: "IAMS Lab 107 https://sites.google.com/view/iamslab107/home",
     keywords: ["逆向工程", "空氣品質感測器", "藍牙低功耗", "Raspberry Pi", "ChatGPT", "Claude Code"],
     sourceCode: "https://github.com/Li-Yi-2002/Air-mentor----revive-your-old-air-sensor-",
     description: "在第二場短講中，我將展示如何用 AI 逆向工程一款已停產的產品：Air Mentor 8099-AP 空氣品質感測器，它的製造商與 App 都已不存在。在 AI 協助下解讀感測器的藍牙低功耗（BLE）廣播封包後，這台裝置現在可以將 CO2、PM2.5、PM10、TVOC、溫度與濕度記錄到 Raspberry Pi，並透過簡單的網頁儀表板呈現。我會展示我的工作流程與我和 AI 的對話，以及它如何幫我省下大量時間。"
