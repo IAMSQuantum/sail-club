@@ -29,7 +29,7 @@ Contacts in the footer:
 
 Example (current state, Sept 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-sep22", { start: 0, count: 2 });           // upcoming: Eric's two short talks
+renderTalks("talk-list-sep29", { start: 0, count: 2 });           // upcoming: Eric's two short talks
 renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });   // archive
 renderTalks("talk-list-archive-may26", { start: 5, count: 2 });   // archive
 renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });   // archive
@@ -105,7 +105,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260903c` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260921` on all four pages.
 
 ## Layout / CSS notes
 
