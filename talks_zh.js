@@ -1,5 +1,40 @@
 const talks = [
   {
+    name: "輕鬆製作物理教學影片",
+    image: "",
+    video: "https://www.youtube.com/watch?v=dRVw6X3P0ls",
+    presenter: "Hung-Chi Wang 與 Shayne Bennetts",
+    presentedDate: "待定",
+    contributors: "Chun-Chia Chen 陳俊嘉",
+    labGroup: "IAMS-Yb-Lab（110） https://iamsquantum.github.io/new/index.html",
+    keywords: ["教學影片", "解說影片", "物理教學", "影片製作流程", "Claude Code skill"],
+    sourceCode: "https://github.com/iams-yb-lab/show-your-work",
+    description: "我們將介紹一套簡單的工作流程與 skill，讓你能快速、有效率地製作影片教學，用來展示你的研究成果並教授物理。"
+  },
+  {
+    name: "AtomOS：用 AI 開發分散式中性原子量子計算的作業系統",
+    image: "AtomOS.gif",
+    presenter: "Shayne Bennetts",
+    presentedDate: "待定",
+    contributors: "無",
+    labGroup: "IAMS-Yb-Lab（110） https://iamsquantum.github.io/new/index.html",
+    keywords: ["中性原子量子計算", "光鑷", "奈米光纖", "量子網路", "即時控制", "AI 輔助開發"],
+    sourceCode: "",
+    description: "我們的原子—奈米光纖實驗需要以可移動的光鑷陣列即時控制原子。此外，我們也希望更深入理解並量化量子網路在執行實際程式（例如分解 RSA-2048）的中性原子處理器中的重要性。我們將報告開發一套作業系統的進展，用於控制與模擬以奈米光纖連網的中性原子量子電腦，並說明我們用來維持長時間開發工作階段的技巧，以及我們的除錯方法。"
+  },
+  {
+    name: "用 AI 進行電子電路設計",
+    image: "",
+    video: "https://www.youtube.com/watch?v=5jy-V41uGpI",
+    presenter: "Emon Wei 魏廷恩、Jack Zheng 鄭介展 與 Hung-Chi Wang",
+    presentedDate: "2026 年 10 月 20 日（週二）中午 12點",
+    contributors: "Shayne Bennetts、Chun-Chia Chen 陳俊嘉",
+    labGroup: "IAMS-Yb-Lab（110） https://iamsquantum.github.io/new/index.html",
+    keywords: ["PCB 設計", "KiCAD", "Konnect MCP 伺服器", "Codex", "Claude", "電子學"],
+    sourceCode: "https://github.com/mixelpixx/Konnect",
+    description: "我們一直在測試 AI（Codex Astra、Claude Opus 與 Fable）在電子／PCB 設計流程各階段的表現，使用 KiCAD 10 搭配 Konnect MCP 伺服器（https://github.com/mixelpixx/Konnect）。我們將說明所發展出的技巧、設計流程中哪些階段 AI 表現良好、哪些仍以人工完成為佳，並介紹進行 AI PCB 設計所需的資源。"
+  },
+  {
     name: "用 ChatGPT 與 Claude Code 打造一維光學模擬器",
     image: "4-1.png",
     presenter: "Yi-Quan Li 李翊銓 (Eric)",

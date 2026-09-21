@@ -1,5 +1,40 @@
 const talks = [
   {
+    name: "Creating physics tutorial videos easily",
+    image: "",
+    video: "https://www.youtube.com/watch?v=dRVw6X3P0ls",
+    presenter: "Hung-Chi Wang and Shayne Bennetts",
+    presentedDate: "TBA",
+    contributors: "Chun-Chia Chen 陳俊嘉",
+    labGroup: "IAMS-Yb-Lab (110) https://iamsquantum.github.io/new/index.html",
+    keywords: ["tutorial videos", "explainer videos", "teaching physics", "video workflow", "Claude Code skill"],
+    sourceCode: "https://github.com/iams-yb-lab/show-your-work",
+    description: "We will present an easy workflow and skill for quickly and efficiently creating video tutorials to help present your work and teach physics."
+  },
+  {
+    name: "AtomOS: Developing an operating system for distributed neutral atom quantum computing using AI",
+    image: "AtomOS.gif",
+    presenter: "Shayne Bennetts",
+    presentedDate: "TBA",
+    contributors: "None listed",
+    labGroup: "IAMS-Yb-Lab (110) https://iamsquantum.github.io/new/index.html",
+    keywords: ["neutral atom quantum computing", "optical tweezers", "nanofiber", "quantum networking", "real-time control", "AI-assisted development"],
+    sourceCode: "",
+    description: "Our atom-nanofiber experiment requires real time control of atoms using mobile arrays of optical tweezers. Furthermore, we would like to better understand and quantify the importance of quantum networking in neutral atom processors running real programs like factoring RSA 2048. We will present progress towards developing an operating system for controlling and simulating nanofiber networked neutral atom quantum computers. We will describe techniques we have been using to allow long running sessions and our approach to debugging."
+  },
+  {
+    name: "Electronic design using AI",
+    image: "",
+    video: "https://www.youtube.com/watch?v=5jy-V41uGpI",
+    presenter: "Emon Wei 魏廷恩, Jack Zheng 鄭介展 and Hung-Chi Wang",
+    presentedDate: "12pm Tuesday October 20, 2026",
+    contributors: "Shayne Bennetts, Chun-Chia Chen 陳俊嘉",
+    labGroup: "IAMS-Yb-Lab (110) https://iamsquantum.github.io/new/index.html",
+    keywords: ["PCB design", "KiCAD", "Konnect MCP server", "Codex", "Claude", "electronics"],
+    sourceCode: "https://github.com/mixelpixx/Konnect",
+    description: "We have been testing AI (Codex Astra and Claude Opus and Fable) at all stages of the electronic/PCB design process using KiCAD 10 with the Konnect MCP server https://github.com/mixelpixx/Konnect. We will describe the techniques we have developed and which stages of the design process worked well and which are better done by humans. The resources needed for AI PCB design will also be described."
+  },
+  {
     name: "Building a 1D optical simulator with ChatGPT and Claude Code",
     image: "4-1.png",
     presenter: "Yi-Quan Li 李翊銓 (Eric)",

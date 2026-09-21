@@ -29,10 +29,16 @@ Contacts in the footer:
 
 Example (current state, Sept 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-sep29", { start: 0, count: 2 });           // upcoming: Eric's two short talks
-renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });   // archive
-renderTalks("talk-list-archive-may26", { start: 5, count: 2 });   // archive
-renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });   // archive
+renderTalks("talk-list-sep29", { start: 3, count: 2 });           // next lunch: Eric's two short talks
+renderTalks("talk-list-oct20", { start: 2, count: 1 });           // Oct 20: Electronic design using AI
+renderTalks("talk-list-tba", { start: 0, count: 2 });             // date TBA: tutorial videos, AtomOS
+renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });   // archive
+renderTalks("talk-list-archive-may26", { start: 8, count: 2 });   // archive
+renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });  // archive
+```
+Array order is by date, latest first, with TBA talks at the very top (indices 0-1). The order of
+the `renderTalks` calls does not matter; the page order comes from where the `<section>` sits.
+```js
 ```
 When a new lunch is added, **prepend** its talks to both arrays and shift every `start` by the number of talks added.
 
@@ -43,6 +49,7 @@ When a new lunch is added, **prepend** its talks to both arrays and shift every 
    - English: `"12pm Tuesday May 26, 2026"` — regex picks up the `Month DD, YYYY` part.
    - Chinese: `"2026 年 5 月 26 日（週二）中午 12點"` — regex picks up `YYYY 年 M 月 D 日`.
    If you use a different format, the label may fall back to "upcoming" silently. Keep these formats.
+   A talk with no date yet uses `presentedDate: "TBA"` / `"待定"`, which renders as "To be presented: TBA".
 
 **Talk object shape** (see `talks.js`):
 ```js
@@ -57,6 +64,8 @@ When a new lunch is added, **prepend** its talks to both arrays and shift every 
   sourceCode: "https://...",          // empty string → renders "TBD" / "待補"
   appLink: "https://...",             // optional — empty → "TBD" / "待補"
   slides: "Presentations/1-1-Name-Title.pdf",   // optional — URL-encode spaces; empty/missing → "TBD" / "待補"
+  video: "https://www.youtube.com/watch?v=ID",   // optional — YouTube link. Details show a "Video" link + embedded
+                                                 // player. If image is "" the card thumbnail is the YouTube poster.
   extras: [                           // optional — extra links (demo pages, scripts). Rendered as one line each, only if present.
     { label: "Demo webpage", url: "Presentations/SAIL%20web.html" }
   ],
@@ -105,7 +114,19 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260921` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260921b` on all four pages.
+
+## Favicon
+
+`favicon.png` (64 px) and `apple-touch-icon.png` (180 px) are resized from `SAIL.png` and linked from the
+`<head>` of all four pages. Without them the browser fell back to `/favicon.ico` of the parent
+iamsquantum.github.io site. This repo is separate from the parent site, so nothing there is affected.
+
+## YouTube embeds
+
+Cards with a `video` field embed `https://www.youtube-nocookie.com/embed/<id>` inside `.talk-video`
+(16:9 box, `style.css`). Opening such a card from a local `file://` copy shows YouTube "Error 153",
+because YouTube refuses embeds with no HTTP referrer. It works on the live https site.
 
 ## Layout / CSS notes
 

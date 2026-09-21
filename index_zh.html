@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAIL Club | 首頁</title>
-  <link rel="stylesheet" href="style.css?v=20260921">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css?v=20260921b">
 </head>
 <body>
   <header>
@@ -36,6 +38,10 @@
       <h2>下次午餐：2026年9月29日（週二）中午12點</h2>
       <p><strong>地點：C. T. Chang（401 室）</strong></p>
       <section id="talk-list-sep29" class="talk-list" aria-label="September 29 talks zh"></section>
+      <h2>2026年10月20日（週二）中午12點 — C. T. Chang（401 室）</h2>
+      <section id="talk-list-oct20" class="talk-list" aria-label="October 20 talks zh"></section>
+      <h2>日期待定</h2>
+      <section id="talk-list-tba" class="talk-list" aria-label="Talks with date to be announced zh"></section>
       <h1>過往紀錄：</h1>
       <h2>2026年6月23日（週二）中午12點 — C. T. Chang（401 室）</h2>
       <section id="talk-list-archive-jun23" class="talk-list" aria-label="June 23 archive zh"></section>
@@ -70,13 +76,15 @@
     </div>
   </footer>
 
-  <script src="talks_zh.js?v=20260921"></script>
-  <script src="main.js?v=20260921"></script>
+  <script src="talks_zh.js?v=20260921b"></script>
+  <script src="main.js?v=20260921b"></script>
   <script>
-    renderTalks("talk-list-sep29", { start: 0, count: 2 });
-    renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });
-    renderTalks("talk-list-archive-may26", { start: 5, count: 2 });
-    renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });
+    renderTalks("talk-list-sep29", { start: 3, count: 2 });
+    renderTalks("talk-list-oct20", { start: 2, count: 1 });
+    renderTalks("talk-list-tba", { start: 0, count: 2 });
+    renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });
+    renderTalks("talk-list-archive-may26", { start: 8, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });
   </script>
 </body>
 </html>

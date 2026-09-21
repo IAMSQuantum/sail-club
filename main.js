@@ -14,6 +14,7 @@
         sourceCode: "原始碼",
         browserApp: "瀏覽器應用",
         slides: "投影片",
+        video: "影片",
         description: "簡介",
         sourceMissing: "待補"
       }
@@ -27,6 +28,7 @@
         sourceCode: "Source Code",
         browserApp: "Browser App",
         slides: "Slides",
+        video: "Video",
         description: "Description",
         sourceMissing: "TBD"
       };
@@ -93,9 +95,21 @@
       return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
     })();
 
+    // Optional YouTube video: the card thumbnail falls back to the video's
+    // poster frame when no image is given, and the details embed the player.
+    const videoId = (() => {
+      const match = (talk.video || "").match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([\w-]{11})/);
+      return match ? match[1] : "";
+    })();
+    const thumb = talk.image || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "SAIL.png");
+    const videoMarkup = videoId
+      ? `<p class="meta-line"><span class="meta-label">${labels.video}:</span> <a href="${talk.video}" target="_blank" rel="noopener noreferrer">${talk.video}</a></p>
+          <div class="talk-video"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}" title="${talk.name}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+      : "";
+
     item.innerHTML = `
       <div class="talk-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="talk-details-${index}">
-        <img class="talk-thumb" src="${talk.image}" alt="Image for ${talk.name}">
+        <img class="talk-thumb" src="${thumb}" alt="Image for ${talk.name}">
         <div class="talk-head">
           <h2 class="talk-name">${talk.name}</h2>
           <span class="talk-arrow" aria-hidden="true">›</span>
@@ -113,6 +127,7 @@
           <p class="meta-line"><span class="meta-label">${labels.browserApp}:</span> ${appMarkup}</p>
           <p class="meta-line"><span class="meta-label">${labels.slides}:</span> ${slidesMarkup}</p>
           ${extrasMarkup}
+          ${videoMarkup}
           <p class="meta-line"><span class="meta-label">${labels.description}:</span> ${talk.description}</p>
         </div>
       </div>

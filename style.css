@@ -1,4 +1,4 @@
-﻿/* SAIL Club website styles */
+/* SAIL Club website styles */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -204,6 +204,22 @@ main {
 .meta-label {
   font-weight: 700;
   color: #243145;
+}
+
+.talk-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 4px 0 6px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.talk-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .resource-list {
