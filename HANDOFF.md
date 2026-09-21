@@ -1,10 +1,26 @@
 # SAIL Club site — handoff notes
 
 Quick orientation for the next time we edit this site. Read this first, then go.
+Last updated: 2026-09-21.
 
 ## What this site is
 
-Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sinica. No build step, no framework — plain HTML/CSS/JS. Almost certainly served from GitHub Pages or similar (assume **case-sensitive filesystem** when picking image filenames).
+Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sinica. No build step, no framework — plain HTML/CSS/JS.
+
+**Hosting / deploy (confirmed):** git repo `github.com/IAMSQuantum/sail-club`, branch `main`, served by GitHub Pages at https://iamsquantum.github.io/sail-club/. Deploy = commit + `git push origin main`; Pages rebuilds in 1–3 minutes. Build status: `gh api repos/IAMSQuantum/sail-club/pages/builds/latest --jq .status`. The filesystem on the host is **case-sensitive**. Git prints "LF will be replaced by CRLF" warnings on every commit here; they are harmless.
+
+Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\handoff.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
+
+## Current state (2026-09-21)
+
+Home page order: **Next lunch Tue 29 Sep 2026** (two talks by Yi-Quan Li, session 4) → **Tue 20 Oct 2026** (Electronic design using AI) → **Date to be announced** (Creating physics tutorial videos easily; AtomOS) → Archive (Jun 23, May 26, Apr 29). 13 talks in each array. Last commit `319c930`.
+
+Open items:
+- AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
+- Hung-Chi Wang has no Chinese name on the cards (not known at time of writing).
+- The two TBA talks need dates: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move them into a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
+- Nobody has yet clicked a video card on the live https site to confirm the YouTube player plays (headless checks from `file://` always show Error 153, see "YouTube embeds").
+- After 29 Sep: move the Sep 29 heading + section under Archive (see checklist below).
 
 Contacts in the footer:
 - Shayne Bennetts `s.p.bennetts@g.iams.sinica.edu.tw`
@@ -18,8 +34,10 @@ Contacts in the footer:
 | `resources.html` / `resources_zh.html` | Static resource page (models, tools, tutorials, videos, guidelines). |
 | `talks.js` / `talks_zh.js` | The single source of talk metadata. Same order in both files — see "Renderer contract" below. |
 | `main.js` | `renderTalks(listId, { start, count })` — generates talk cards from the `talks` array, handles expand/collapse and past/future date label. |
-| `style.css` | All styles. 2-column grid for `.talk-list` at desktop, collapses to 1-col under 720px. |
-| `*.png`, `*.gif`, `*.jpg` | Logos and talk thumbnails. **Filenames are case-sensitive on the live host** (e.g. `Wavemeter.gif`, not `wavemeter.gif`). |
+| `style.css` | All styles. 2-column grid for `.talk-list` at desktop, collapses to 1-col under 720px. `.talk-video` is the 16:9 box for embedded YouTube players. |
+| `favicon.png`, `apple-touch-icon.png` | 64 px / 180 px resizes of `SAIL.png`, linked from all four pages (see "Favicon"). |
+| `HANDOFF.md` | This file. |
+| `*.png`, `*.gif`, `*.jpg` | Logos and talk thumbnails (`4-1.png`, `4-2.png` = session 4; `AtomOS.gif` = AtomOS talk). **Filenames are case-sensitive on the live host** (e.g. `Wavemeter.gif`, not `wavemeter.gif`). Talks with a `video` field and `image: ""` need no file; the YouTube poster is used. |
 | `IAMS_AI_Guidelines.pdf` | Linked from the Resources page. |
 | `Presentations/` | Slide PDFs and other files from past talks, linked from talk cards via `slides` / `extras`. Naming convention `<session>-<talk>-<Presenter>-<title>.pdf` (e.g. `3-1-…`). Filenames contain spaces — **URL-encode them (`%20`) in `talks*.js`**. |
 
@@ -38,9 +56,11 @@ renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });  // archive
 ```
 Array order is by date, latest first, with TBA talks at the very top (indices 0-1). The order of
 the `renderTalks` calls does not matter; the page order comes from where the `<section>` sits.
-```js
+
+When a new lunch is added, **prepend** its talks to both arrays and shift every later `start` by the number of talks added. Quick check that both arrays still line up:
 ```
-When a new lunch is added, **prepend** its talks to both arrays and shift every `start` by the number of talks added.
+node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.readFileSync('talks.js','utf8')+';talks'),zh=vm.runInNewContext(fs.readFileSync('talks_zh.js','utf8')+';talks');console.log(en.length,zh.length);en.forEach((t,i)=>console.log(i,t.presentedDate,'|',zh[i].presentedDate,'|',t.name.slice(0,40)))"
+```
 
 **Critical invariants:**
 1. `talks.js` and `talks_zh.js` must have **identical order** — `start`/`count` slices both arrays the same way. If you add/remove/reorder a talk, do it in both files in the same position.
@@ -80,16 +100,19 @@ When a new lunch is added, **prepend** its talks to both arrays and shift every 
 ## Common edits — checklists
 
 ### Change next-lunch date / venue
-1. `index.html` lines ~34-37 (heading + "Place:" line + section id).
-2. `index_zh.html` lines ~35-38 (mirror).
+1. `index.html` lines ~34-41 (heading + "Place:" line + section ids for the next lunch, Oct 20 and TBA blocks).
+2. `index_zh.html` lines ~36-43 (mirror).
 3. Update every `presentedDate` for talks at that lunch in **both** `talks.js` and `talks_zh.js`.
-4. If the section id changes, update both the `<section id="...">` and the `renderTalks("...")` call in the inline `<script>` at the bottom.
+4. If the section id changes (convention `talk-list-<mon><dd>`), update both the `<section id="...">` and the `renderTalks("...")` call in the inline `<script>` at the bottom of **both** pages.
+5. Bump cache-busting, commit, push, then confirm the live page shows the new date (`curl -s https://iamsquantum.github.io/sail-club/index.html | grep "Next lunch"`).
+6. The emails in the parent folder (`..\call-for-presenters-2026.html`, `..\register-*.html`) carry the same dates; update them too (see `..\handoff.md`).
 
 ### Add a new talk
-1. Append the talk object to `talks.js` and `talks_zh.js` (same index in both).
-2. Drop the thumbnail image into the repo root. **Match exact case** in `image: "..."`.
+1. Insert the talk object at the same index in `talks.js` and `talks_zh.js`. Upcoming talks go at the **top** (prepend), which shifts every existing `start` in both pages' `<script>` blocks by one; a talk for an existing lunch goes next to that lunch's talks and only later slices shift.
+2. Thumbnail: drop the image into the repo root and **match exact case** in `image: "..."`, or set `image: ""` plus `video: "https://www.youtube.com/watch?v=..."` to use the YouTube poster.
 3. Bump cache-busting query string (see below).
-4. If the talk belongs to a lunch that isn't currently in the renderer call, add or extend the `renderTalks(...)` slice.
+4. If the talk belongs to a lunch that isn't currently on the page, add an `<h2>` + `<section id="talk-list-...">` in both HTML files and a matching `renderTalks(...)` call.
+5. Run the node array check, render both pages with headless Edge (`msedge --headless=new --disable-gpu --virtual-time-budget=5000 --dump-dom file:///.../index_zh.html | grep -c 'class="talk-item"'` should equal the array length), commit, push.
 
 ### Move past talks to archive
 1. In `index.html` / `index_zh.html`, restructure the headings — move the lunch heading + section under `<h1>Archive:</h1>` / `<h1>過往紀錄：</h1>`.
@@ -101,7 +124,7 @@ When a new lunch is added, **prepend** its talks to both arrays and shift every 
 2. Set `slides: "Presentations/<URL-encoded filename>.pdf"` on the talk in **both** `talks.js` and `talks_zh.js`.
 3. Bump cache-busting (see below).
 
-Still missing as of 2026-09-03: slides for Hao-Rong Yang (session 2-1, has `extras` links instead) and Kenee Kaiser Custodio (session 1-3).
+Still missing as of 2026-09-21: slides for Hao-Rong Yang (session 2-1, has `extras` links instead) and Kenee Kaiser Custodio (session 1-3). Session 4 (Sep 29) slides to be added after the lunch as `4-1-…` and `4-2-…`.
 
 ### Add an image
 - Put it in the repo root alongside the HTML.
@@ -146,6 +169,7 @@ because YouTube refuses embeds with no HTTP referrer. It works on the live https
 ## User preferences observed
 
 - Wants concise updates; doesn't need long summaries of what changed.
+- Expects website edits to be committed, pushed and confirmed live in the same session.
 - Verifies day-of-week claims (we got caught once on "Wednesday May 27" vs Tuesday May 26). **Always confirm day-of-week** with the date before writing it into headings.
 - Happy to clean up stale data when shipping (e.g. removed placeholder talks).
 - Bilingual updates expected — every EN change needs a 中文 mirror.
@@ -157,4 +181,6 @@ because YouTube refuses embeds with no HTTP referrer. It works on the live https
 - [ ] Section IDs in HTML match every `renderTalks(...)` call.
 - [ ] Cache-busting `?v=...` bumped on all changed assets across all 4 HTML pages.
 - [ ] Day-of-week in any heading matches the actual calendar.
-- [ ] No "TBD" / "待補" placeholder talks shipped — only intentional ones.
+- [ ] No "TBD" / "待補" placeholder talks shipped — only intentional ones (AtomOS `sourceCode` is intentionally empty for now).
+- [ ] Both pages render the full card count in headless Edge (a JS error in one page's `<script>` block silently renders zero cards — this happened once on `index_zh.html`).
+- [ ] Pushed, and the live page shows the change.
