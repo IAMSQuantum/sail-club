@@ -9,7 +9,7 @@ Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sin
 
 **Hosting / deploy (confirmed):** git repo `github.com/IAMSQuantum/sail-club`, branch `main`, served by GitHub Pages at https://iamsquantum.github.io/sail-club/. Deploy = commit + `git push origin main`; Pages rebuilds in 1–3 minutes. Build status: `gh api repos/IAMSQuantum/sail-club/pages/builds/latest --jq .status`. The filesystem on the host is **case-sensitive**. Git prints "LF will be replaced by CRLF" warnings on every commit here; they are harmless.
 
-Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\handoff.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
+Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\HANDOVER.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
 
 ## Current state (2026-09-21)
 
@@ -36,7 +36,7 @@ Contacts in the footer:
 | `main.js` | `renderTalks(listId, { start, count })` — generates talk cards from the `talks` array, handles expand/collapse and past/future date label. |
 | `style.css` | All styles. 2-column grid for `.talk-list` at desktop, collapses to 1-col under 720px. `.talk-video` is the 16:9 box for embedded YouTube players. |
 | `favicon.png`, `apple-touch-icon.png` | 64 px / 180 px resizes of `SAIL.png`, linked from all four pages (see "Favicon"). |
-| `HANDOFF.md` | This file. |
+| `HANDOVER.md` | This file. |
 | `*.png`, `*.gif`, `*.jpg` | Logos and talk thumbnails (`4-1.png`, `4-2.png` = session 4; `AtomOS.gif` = AtomOS talk). **Filenames are case-sensitive on the live host** (e.g. `Wavemeter.gif`, not `wavemeter.gif`). Talks with a `video` field and `image: ""` need no file; the YouTube poster is used. |
 | `IAMS_AI_Guidelines.pdf` | Linked from the Resources page. |
 | `Presentations/` | Slide PDFs and other files from past talks, linked from talk cards via `slides` / `extras`. Naming convention `<session>-<talk>-<Presenter>-<title>.pdf` (e.g. `3-1-…`). Filenames contain spaces — **URL-encode them (`%20`) in `talks*.js`**. |
@@ -105,7 +105,7 @@ node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.
 3. Update every `presentedDate` for talks at that lunch in **both** `talks.js` and `talks_zh.js`.
 4. If the section id changes (convention `talk-list-<mon><dd>`), update both the `<section id="...">` and the `renderTalks("...")` call in the inline `<script>` at the bottom of **both** pages.
 5. Bump cache-busting, commit, push, then confirm the live page shows the new date (`curl -s https://iamsquantum.github.io/sail-club/index.html | grep "Next lunch"`).
-6. The emails in the parent folder (`..\call-for-presenters-2026.html`, `..\register-*.html`) carry the same dates; update them too (see `..\handoff.md`).
+6. The emails in the parent folder (`..\call-for-presenters-2026.html`, `..\register-*.html`) carry the same dates; update them too (see `..\HANDOVER.md`).
 
 ### Add a new talk
 1. Insert the talk object at the same index in `talks.js` and `talks_zh.js`. Upcoming talks go at the **top** (prepend), which shifts every existing `start` in both pages' `<script>` blocks by one; a talk for an existing lunch goes next to that lunch's talks and only later slices shift.
