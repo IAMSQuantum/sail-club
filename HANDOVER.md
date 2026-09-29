@@ -17,7 +17,6 @@ Home page order: **Next lunch Tue 20 Oct 2026** (Electronic design using AI) →
 
 Open items:
 - AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
-- Hung-Chi Wang has no Chinese name on the cards (not known at time of writing).
 - The two TBA talks need dates: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move them into a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
 - Nobody has yet clicked a video card on the live https site to confirm the YouTube player plays (headless checks from `file://` always show Error 153, see "YouTube embeds").
 
@@ -136,7 +135,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929b` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929c` on all four pages.
 
 ## Favicon
 
