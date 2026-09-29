@@ -81,7 +81,7 @@ node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.
   labGroup: "Lab name https://url",   // URL must be at END of string — parser is fragile
   keywords: ["a", "b"],
   sourceCode: "https://...",          // empty string → renders "TBD" / "待補"
-  appLink: "https://...",             // optional — empty → "TBD" / "待補"
+  appLink: "https://...",             // optional — the "Browser App" line is shown only when set
   slides: "Presentations/1-1-Name-Title.pdf",   // optional — URL-encode spaces; empty/missing → "TBD" / "待補"
   video: "https://www.youtube.com/watch?v=ID",   // optional — YouTube link. Details show a "Video" link + embedded
                                                  // player. If image is "" the card thumbnail is the YouTube poster.
@@ -136,7 +136,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929b` on all four pages.
 
 ## Favicon
 

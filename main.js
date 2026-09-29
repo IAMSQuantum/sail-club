@@ -64,9 +64,10 @@
     const sourceMarkup = talk.sourceCode
       ? `<a href="${talk.sourceCode}" target="_blank" rel="noopener noreferrer">${talk.sourceCode}</a>`
       : labels.sourceMissing;
+    // The Browser App line is shown only for talks that have an app link.
     const appMarkup = talk.appLink
-      ? `<a href="${talk.appLink}" target="_blank" rel="noopener noreferrer">${talk.appLink}</a>`
-      : labels.sourceMissing;
+      ? `<p class="meta-line"><span class="meta-label">${labels.browserApp}:</span> <a href="${talk.appLink}" target="_blank" rel="noopener noreferrer">${talk.appLink}</a></p>`
+      : "";
     // Local file links (slides, extras) show just the file name as link text.
     const fileLabel = (url) => {
       try {
@@ -124,7 +125,7 @@
           <p class="meta-line"><span class="meta-label">${labels.labGroup}:</span> ${labGroupMarkup}</p>
           <p class="meta-line"><span class="meta-label">${labels.keywords}:</span> ${talk.keywords.join(", ")}</p>
           <p class="meta-line"><span class="meta-label">${labels.sourceCode}:</span> ${sourceMarkup}</p>
-          <p class="meta-line"><span class="meta-label">${labels.browserApp}:</span> ${appMarkup}</p>
+          ${appMarkup}
           <p class="meta-line"><span class="meta-label">${labels.slides}:</span> ${slidesMarkup}</p>
           ${extrasMarkup}
           ${videoMarkup}
