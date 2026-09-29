@@ -43,6 +43,7 @@ const talks = [
     labGroup: "Ultracold Atomic Physics Laboratory (IAMS Lab 107) https://sites.google.com/view/iamslab107/home",
     keywords: ["optical simulation", "beam propagation", "Claude Code", "ChatGPT", "Tkinter GUI"],
     sourceCode: "https://github.com/Li-Yi-2002/IAMS_Lab107_optical_simulation",
+    slides: "Presentations/Vibe%20coding%20for%20AMO%20Experiments.pdf",
     description: "In this short talk I will share how I used generative AI (ChatGPT and Claude Code) to build a 1D optical simulator that can support several kinds of optical component (spiral phase plates, axicons, thin lenses and apertures) and propagates a Gaussian beam through them in an interactive GUI. I will show my working flow and my conversation with the AI. Using AI really helped me boost my progress and saved me a lot of time. If my experience is helpful to you, that would be great!"
   },
   {
@@ -54,6 +55,7 @@ const talks = [
     labGroup: "Ultracold Atomic Physics Laboratory (IAMS Lab 107) https://sites.google.com/view/iamslab107/home",
     keywords: ["reverse engineering", "air quality sensor", "Bluetooth LE", "Raspberry Pi", "ChatGPT", "Claude Code"],
     sourceCode: "https://github.com/Li-Yi-2002/Air-mentor----revive-your-old-air-sensor-",
+    slides: "Presentations/Vibe%20coding%20for%20AMO%20Experiments.pdf",
     description: "In this second short talk I will show how I used AI to reverse-engineer a discontinued product, the Air Mentor 8099-AP air quality sensor, whose manufacturer and app no longer exist. By decoding the sensor's Bluetooth Low Energy broadcasts with help from AI, the device now logs CO2, PM2.5, PM10, TVOC, temperature and humidity to a Raspberry Pi with a simple web dashboard. I will show my working flow and my conversation with the AI, and how it saved me a lot of time."
   },
   {

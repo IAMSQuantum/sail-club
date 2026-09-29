@@ -1,7 +1,7 @@
 # SAIL Club site — handoff notes
 
 Quick orientation for the next time we edit this site. Read this first, then go.
-Last updated: 2026-09-21.
+Last updated: 2026-09-29.
 
 ## What this site is
 
@@ -11,16 +11,15 @@ Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sin
 
 Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\HANDOVER.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
 
-## Current state (2026-09-21)
+## Current state (2026-09-29)
 
-Home page order: **Next lunch Tue 29 Sep 2026** (two talks by Yi-Quan Li, session 4) → **Tue 20 Oct 2026** (Electronic design using AI) → **Date to be announced** (Creating physics tutorial videos easily; AtomOS) → Archive (Jun 23, May 26, Apr 29). 13 talks in each array. Last commit `319c930`.
+Home page order: **Next lunch Tue 20 Oct 2026** (Electronic design using AI) → **Date to be announced** (Creating physics tutorial videos easily; AtomOS) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
 
 Open items:
 - AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
 - Hung-Chi Wang has no Chinese name on the cards (not known at time of writing).
 - The two TBA talks need dates: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move them into a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
 - Nobody has yet clicked a video card on the live https site to confirm the YouTube player plays (headless checks from `file://` always show Error 153, see "YouTube embeds").
-- After 29 Sep: move the Sep 29 heading + section under Archive (see checklist below).
 
 Contacts in the footer:
 - Shayne Bennetts `s.p.bennetts@g.iams.sinica.edu.tw`
@@ -47,9 +46,9 @@ Contacts in the footer:
 
 Example (current state, Sept 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-sep29", { start: 3, count: 2 });           // next lunch: Eric's two short talks
-renderTalks("talk-list-oct20", { start: 2, count: 1 });           // Oct 20: Electronic design using AI
+renderTalks("talk-list-oct20", { start: 2, count: 1 });           // next lunch, Oct 20: Electronic design using AI
 renderTalks("talk-list-tba", { start: 0, count: 2 });             // date TBA: tutorial videos, AtomOS
+renderTalks("talk-list-archive-sep29", { start: 3, count: 2 });   // archive: Eric's two short talks
 renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });   // archive
 renderTalks("talk-list-archive-may26", { start: 8, count: 2 });   // archive
 renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });  // archive
@@ -100,8 +99,8 @@ node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.
 ## Common edits — checklists
 
 ### Change next-lunch date / venue
-1. `index.html` lines ~34-41 (heading + "Place:" line + section ids for the next lunch, Oct 20 and TBA blocks).
-2. `index_zh.html` lines ~36-43 (mirror).
+1. `index.html` lines ~36-43 (heading + "Place:" line + section ids for the next lunch and TBA blocks).
+2. `index_zh.html` lines ~37-44 (mirror).
 3. Update every `presentedDate` for talks at that lunch in **both** `talks.js` and `talks_zh.js`.
 4. If the section id changes (convention `talk-list-<mon><dd>`), update both the `<section id="...">` and the `renderTalks("...")` call in the inline `<script>` at the bottom of **both** pages.
 5. Bump cache-busting, commit, push, then confirm the live page shows the new date (`curl -s https://iamsquantum.github.io/sail-club/index.html | grep "Next lunch"`).
@@ -124,7 +123,7 @@ node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.
 2. Set `slides: "Presentations/<URL-encoded filename>.pdf"` on the talk in **both** `talks.js` and `talks_zh.js`.
 3. Bump cache-busting (see below).
 
-Still missing as of 2026-09-21: slides for Hao-Rong Yang (session 2-1, has `extras` links instead) and Kenee Kaiser Custodio (session 1-3). Session 4 (Sep 29) slides to be added after the lunch as `4-1-…` and `4-2-…`.
+Still missing as of 2026-09-29: slides for Hao-Rong Yang (session 2-1, has `extras` links instead) and Kenee Kaiser Custodio (session 1-3).
 
 ### Add an image
 - Put it in the repo root alongside the HTML.
@@ -137,7 +136,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260921b` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929` on all four pages.
 
 ## Favicon
 
