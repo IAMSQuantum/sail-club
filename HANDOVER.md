@@ -110,7 +110,7 @@ node -e "const vm=require('vm'),fs=require('fs');const en=vm.runInNewContext(fs.
 2. Thumbnail: drop the image into the repo root and **match exact case** in `image: "..."`, or set `image: ""` plus `video: "https://www.youtube.com/watch?v=..."` to use the YouTube poster.
 3. Bump cache-busting query string (see below).
 4. If the talk belongs to a lunch that isn't currently on the page, add an `<h2>` + `<section id="talk-list-...">` in both HTML files and a matching `renderTalks(...)` call.
-5. Run the node array check, render both pages with headless Edge (`msedge --headless=new --disable-gpu --virtual-time-budget=5000 --dump-dom file:///.../index_zh.html | grep -c 'class="talk-item"'` should equal the array length), commit, push.
+5. Run the node array check, render both pages with headless Edge (`py -3.13 ../tools/render_check.py [out folder]` counts the `talk-item` cards of both pages and takes screenshots; set `EXPECTED_CARDS` in the script to the new array length), commit, push.
 
 ### Move past talks to archive
 1. In `index.html` / `index_zh.html`, restructure the headings — move the lunch heading + section under `<h1>Archive:</h1>` / `<h1>過往紀錄：</h1>`.
