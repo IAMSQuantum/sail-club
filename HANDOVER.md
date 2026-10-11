@@ -1,7 +1,7 @@
 # SAIL Club site — handoff notes
 
 Quick orientation for the next time we edit this site. Read this first, then go.
-Last updated: 2026-09-29.
+Last updated: 2026-10-12.
 
 ## What this site is
 
@@ -11,9 +11,9 @@ Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sin
 
 Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\HANDOVER.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
 
-## Current state (2026-09-29)
+## Current state (2026-10-12)
 
-Home page order: **Next lunch Tue 20 Oct 2026** (Electronic design using AI) → **Date to be announced** (Creating physics tutorial videos easily; AtomOS) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
+Home page order: **Next lunch Tue 24 Nov 2026** (AtomOS) → **Date to be announced** (Creating physics tutorial videos easily; Electronic design using AI) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. The Oct 20 lunch was cancelled on 2026-10-12 (Shayne; nothing had been announced): the Electronic design talk went back to TBA and AtomOS took the Nov 24 date from the lab calendar; whether the Electronic design talk also goes on Nov 24 is a question to Shayne (sail control file, B1). Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
 
 Open items:
 - AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
@@ -43,10 +43,10 @@ Contacts in the footer:
 
 `index.html` and `index_zh.html` each have one or more `<section id="talk-list-XYZ">` containers, then call `renderTalks("talk-list-XYZ", { start, count })` to slice into the shared `talks` array.
 
-Example (current state, Sept 2026 — newest talks are at the TOP of the array):
+Example (current state, Oct 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-oct20", { start: 2, count: 1 });           // next lunch, Oct 20: Electronic design using AI
-renderTalks("talk-list-tba", { start: 0, count: 2 });             // date TBA: tutorial videos, AtomOS
+renderTalks("talk-list-nov24", { start: 2, count: 1 });           // next lunch, Nov 24: AtomOS
+renderTalks("talk-list-tba", { start: 0, count: 2 });             // date TBA: tutorial videos, Electronic design using AI
 renderTalks("talk-list-archive-sep29", { start: 3, count: 2 });   // archive: Eric's two short talks
 renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });   // archive
 renderTalks("talk-list-archive-may26", { start: 8, count: 2 });   // archive
@@ -135,7 +135,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20260929c` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20261012` on all four pages.
 
 ## Favicon
 
