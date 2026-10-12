@@ -1,7 +1,7 @@
 # SAIL Club site — handoff notes
 
 Quick orientation for the next time we edit this site. Read this first, then go.
-Last updated: 2026-10-12.
+Last updated: 2026-10-13.
 
 ## What this site is
 
@@ -11,13 +11,13 @@ Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sin
 
 Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\HANDOVER.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
 
-## Current state (2026-10-12)
+## Current state (2026-10-13)
 
-Home page order: **Next lunch Tue 24 Nov 2026** (AtomOS) → **Date to be announced** (Creating physics tutorial videos easily; Electronic design using AI) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. The Oct 20 lunch was cancelled on 2026-10-12 (Shayne; nothing had been announced): the Electronic design talk went back to TBA and AtomOS took the Nov 24 date from the lab calendar; whether the Electronic design talk also goes on Nov 24 is a question to Shayne (sail control file, B1). Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
+Home page order: **Next lunch Tue 24 Nov 2026** (Electronic design using AI; AtomOS) → **Date to be announced** (Creating physics tutorial videos easily) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. The Oct 20 lunch was cancelled on 2026-10-12 (Shayne; nothing had been announced); on 2026-10-13 Shayne moved its talk, Electronic design using AI, to Nov 24 beside AtomOS (the date from the lab calendar). Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
 
 Open items:
 - AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
-- The two TBA talks need dates: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move them into a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
+- The TBA talk (tutorial videos, index 0) needs a date: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move it under a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
 - Nobody has yet clicked a video card on the live https site to confirm the YouTube player plays (headless checks from `file://` always show Error 153, see "YouTube embeds").
 
 Contacts in the footer:
@@ -45,14 +45,14 @@ Contacts in the footer:
 
 Example (current state, Oct 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-nov24", { start: 2, count: 1 });           // next lunch, Nov 24: AtomOS
-renderTalks("talk-list-tba", { start: 0, count: 2 });             // date TBA: tutorial videos, Electronic design using AI
+renderTalks("talk-list-nov24", { start: 1, count: 2 });           // next lunch, Nov 24: Electronic design using AI, AtomOS
+renderTalks("talk-list-tba", { start: 0, count: 1 });             // date TBA: tutorial videos
 renderTalks("talk-list-archive-sep29", { start: 3, count: 2 });   // archive: Eric's two short talks
 renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });   // archive
 renderTalks("talk-list-archive-may26", { start: 8, count: 2 });   // archive
 renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });  // archive
 ```
-Array order is by date, latest first, with TBA talks at the very top (indices 0-1). The order of
+Array order is by date, latest first, with TBA talks at the very top (index 0). The order of
 the `renderTalks` calls does not matter; the page order comes from where the `<section>` sits.
 
 When a new lunch is added, **prepend** its talks to both arrays and shift every later `start` by the number of talks added. Quick check that both arrays still line up:
@@ -135,7 +135,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20261012` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20261013` on all four pages.
 
 ## Favicon
 

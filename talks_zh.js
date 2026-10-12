@@ -16,7 +16,7 @@ const talks = [
     image: "",
     video: "https://www.youtube.com/watch?v=5jy-V41uGpI",
     presenter: "Emon Wei 魏廷恩、Jack Zheng 鄭介展 與 Hung-Chi Wang 王泓棋",
-    presentedDate: "待定",
+    presentedDate: "2026 年 11 月 24 日（週二）中午 12點",
     contributors: "Shayne Bennetts、Chun-Chia Chen 陳俊嘉",
     labGroup: "IAMS-Yb-Lab（110） https://iamsquantum.github.io/new/index.html",
     keywords: ["PCB 設計", "KiCAD", "Konnect MCP 伺服器", "Codex", "Claude", "電子學"],
