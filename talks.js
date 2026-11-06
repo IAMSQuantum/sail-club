@@ -1,4 +1,7 @@
 const talks = [
+  // Shelved 2026-11-06 (Shayne: no time for them this year). To restore a talk, move its object out of this
+  // comment and shift every later renderTalks start in index.html and index_zh.html by one.
+  /*
   {
     name: "Creating physics tutorial videos easily",
     image: "",
@@ -34,6 +37,7 @@ const talks = [
     sourceCode: "",
     description: "Our atom-nanofiber experiment requires real time control of atoms using mobile arrays of optical tweezers. Furthermore, we would like to better understand and quantify the importance of quantum networking in neutral atom processors running real programs like factoring RSA 2048. We will present progress towards developing an operating system for controlling and simulating nanofiber networked neutral atom quantum computers. We will describe techniques we have been using to allow long running sessions and our approach to debugging."
   },
+  */
   {
     name: "Building a 1D optical simulator with ChatGPT and Claude Code",
     image: "4-1.png",

@@ -1,4 +1,7 @@
 const talks = [
+  // Shelved 2026-11-06 (Shayne: no time for them this year). To restore a talk, move its object out of this
+  // comment and shift every later renderTalks start in index.html and index_zh.html by one.
+  /*
   {
     name: "輕鬆製作物理教學影片",
     image: "",
@@ -34,6 +37,7 @@ const talks = [
     sourceCode: "",
     description: "我們的原子—奈米光纖實驗需要以可移動的光鑷陣列即時控制原子。此外，我們也希望更深入理解並量化量子網路在執行實際程式（例如分解 RSA-2048）的中性原子處理器中的重要性。我們將報告開發一套作業系統的進展，用於控制與模擬以奈米光纖連網的中性原子量子電腦，並說明我們用來維持長時間開發工作階段的技巧，以及我們的除錯方法。"
   },
+  */
   {
     name: "用 ChatGPT 與 Claude Code 打造一維光學模擬器",
     image: "4-1.png",

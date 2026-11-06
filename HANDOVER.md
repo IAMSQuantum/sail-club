@@ -1,7 +1,7 @@
 # SAIL Club site — handoff notes
 
 Quick orientation for the next time we edit this site. Read this first, then go.
-Last updated: 2026-10-13.
+Last updated: 2026-11-06.
 
 ## What this site is
 
@@ -11,18 +11,14 @@ Static bilingual site for the SAIL (Sharing AI Lunch) Club at IAMS, Academia Sin
 
 Local checkout: `G:\My Drive\2. Presentations\SAIL\sail-club` (inside the SAIL outreach folder, whose own `..\HANDOVER.md` covers the emails). Shayne expects site edits to be pushed and live, not left in the working tree.
 
-## Current state (2026-10-13)
+## Current state (2026-11-06)
 
-Home page order: **Next lunch Tue 24 Nov 2026** (Electronic design using AI; AtomOS) → **Date to be announced** (Creating physics tutorial videos easily) → Archive (Sep 29, Jun 23, May 26, Apr 29). 13 talks in each array. The Oct 20 lunch was cancelled on 2026-10-12 (Shayne; nothing had been announced); on 2026-10-13 Shayne moved its talk, Electronic design using AI, to Nov 24 beside AtomOS (the date from the lab calendar). Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf` (it covers both talks; kept under the presenter's own filename rather than the `4-x-…` convention).
+Home page order: **Next lunch Tue 24 Nov 2026** (no talks yet: a "Programme to be announced" line inviting short talks) → **Tue 22 Dec 2026** (a line: Charles Lai will present, title to be announced; no card until the title is known) → Archive (Sep 29, Jun 23, May 26, Apr 29). 10 talks in each array, 10 cards rendered. Three talks are **shelved**, not deleted: "Creating physics tutorial videos easily", "Electronic design using AI" and AtomOS sit inside one block comment at the top of `talks.js` and `talks_zh.js` (Shayne, 6 Nov 2026: no time for them this year). To bring one back, move its object out of the comment (same position in both files) and shift every later `renderTalks` start by one. Session 4 (Sep 29, two talks by Yi-Quan Li) is archived; both cards link the one slide deck `Presentations/Vibe coding for AMO Experiments.pdf`.
 
 Open items:
-- AtomOS talk: `sourceCode: ""` (renders TBD) until a repo exists.
-- The TBA talk (tutorial videos, index 0) needs a date: set `presentedDate` in both talk files (EN `"12pm Tuesday Month D, YYYY"`, ZH `"YYYY 年 M 月 D 日（週二）中午 12點"`), move it under a dated `<h2>` + `<section>` and adjust the `renderTalks` slices.
+- Charles Lai's December talk: once the title and blurb are known, add a talk object at index 0 of both arrays (EN date `"12pm Tuesday December 22, 2026"`, ZH `"2026 年 12 月 22 日（週二）中午 12點"`), replace the paragraph under the Dec 22 heading with `<section id="talk-list-dec22" ...>`, add `renderTalks("talk-list-dec22", { start: 0, count: 1 })`, shift the archive starts by one, set `EXPECTED_CARDS` in `../tools/render_check.py` to 11.
+- AtomOS talk (shelved): `sourceCode: ""` until a repo exists.
 - Nobody has yet clicked a video card on the live https site to confirm the YouTube player plays (headless checks from `file://` always show Error 153, see "YouTube embeds").
-
-Contacts in the footer:
-- Shayne Bennetts `s.p.bennetts@g.iams.sinica.edu.tw`
-- Qian-Rui Huang 黃千睿 `qrhuang@gate.sinica.edu.tw`
 
 ## File map
 
@@ -43,16 +39,15 @@ Contacts in the footer:
 
 `index.html` and `index_zh.html` each have one or more `<section id="talk-list-XYZ">` containers, then call `renderTalks("talk-list-XYZ", { start, count })` to slice into the shared `talks` array.
 
-Example (current state, Oct 2026 — newest talks are at the TOP of the array):
+Example (current state, Nov 2026 — newest talks are at the TOP of the array):
 ```js
-renderTalks("talk-list-nov24", { start: 1, count: 2 });           // next lunch, Nov 24: Electronic design using AI, AtomOS
-renderTalks("talk-list-tba", { start: 0, count: 1 });             // date TBA: tutorial videos
-renderTalks("talk-list-archive-sep29", { start: 3, count: 2 });   // archive: Eric's two short talks
-renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });   // archive
-renderTalks("talk-list-archive-may26", { start: 8, count: 2 });   // archive
-renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });  // archive
+renderTalks("talk-list-archive-sep29", { start: 0, count: 2 });   // archive: Eric's two short talks
+renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });   // archive
+renderTalks("talk-list-archive-may26", { start: 5, count: 2 });   // archive
+renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });   // archive
+// (Nov 2026: the two upcoming lunches have no cards yet; three shelved talks sit in a block comment at the top of both arrays)
 ```
-Array order is by date, latest first, with TBA talks at the very top (index 0). The order of
+Array order is by date, latest first, with TBA talks at the very top. The order of
 the `renderTalks` calls does not matter; the page order comes from where the `<section>` sits.
 
 When a new lunch is added, **prepend** its talks to both arrays and shift every later `start` by the number of talks added. Quick check that both arrays still line up:
@@ -135,7 +130,7 @@ CSS and JS are loaded with `?v=YYYYMMDD` (or `YYYYMMDDx` if multiple bumps in on
 - `index_zh.html` — same.
 - `resources.html` / `resources_zh.html` — `<link rel="stylesheet" href="style.css?v=...">` (no scripts on resource pages).
 
-Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20261013` on all four pages.
+Convention so far: date-based, e.g. `?v=20260518`, `?v=20260518b` for a second bump same day. Current: `?v=20261106` on all four pages.
 
 ## Favicon
 

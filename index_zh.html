@@ -6,7 +6,7 @@
   <title>SAIL Club | 首頁</title>
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261013">
+  <link rel="stylesheet" href="style.css?v=20261106">
 </head>
 <body>
   <header>
@@ -37,9 +37,9 @@
       <h1>即將到來的午餐分享</h1>
       <h2>下次午餐：2026年11月24日（週二）中午12點</h2>
       <p><strong>地點：C. T. Chang（401 室）</strong></p>
-      <section id="talk-list-nov24" class="talk-list" aria-label="November 24 talks zh"></section>
-      <h2>日期待定</h2>
-      <section id="talk-list-tba" class="talk-list" aria-label="Talks with date to be announced zh"></section>
+      <p>節目內容即將公布。如果你想在這一天做一場短講，歡迎<a href="#contact">聯絡</a>主辦人。</p>
+      <h2>2026年12月22日（週二）中午12點 — C. T. Chang（401 室）</h2>
+      <p>講者：Charles Lai，題目即將公布。</p>
       <h1>過往紀錄：</h1>
       <h2>2026年9月29日（週二）中午12點 — C. T. Chang（401 室）</h2>
       <section id="talk-list-archive-sep29" class="talk-list" aria-label="September 29 archive zh"></section>
@@ -76,15 +76,13 @@
     </div>
   </footer>
 
-  <script src="talks_zh.js?v=20261013"></script>
-  <script src="main.js?v=20261013"></script>
+  <script src="talks_zh.js?v=20261106"></script>
+  <script src="main.js?v=20261106"></script>
   <script>
-    renderTalks("talk-list-archive-sep29", { start: 3, count: 2 });
-    renderTalks("talk-list-nov24", { start: 1, count: 2 });
-    renderTalks("talk-list-tba", { start: 0, count: 1 });
-    renderTalks("talk-list-archive-jun23", { start: 5, count: 3 });
-    renderTalks("talk-list-archive-may26", { start: 8, count: 2 });
-    renderTalks("talk-list-archive-apr29", { start: 10, count: 3 });
+    renderTalks("talk-list-archive-sep29", { start: 0, count: 2 });
+    renderTalks("talk-list-archive-jun23", { start: 2, count: 3 });
+    renderTalks("talk-list-archive-may26", { start: 5, count: 2 });
+    renderTalks("talk-list-archive-apr29", { start: 7, count: 3 });
   </script>
 </body>
 </html>
